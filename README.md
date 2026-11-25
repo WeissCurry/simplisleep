@@ -185,7 +185,7 @@ Variabel lingkungan dibaca dari root `.env` atau environment server. Tabel berik
 ## Deployment Production
 
 ### 1. Arsitektur Hosting yang Disarankan
-- **Frontend Web**: Static Hosting (Netlify, Vercel, Cloudflare Pages). Konfigurasi build, headers keamanan, proxy reverse ke API (`/api/*`), dan routing SPA telah disediakan terpusat via `netlify.toml` di root repo.
+- **Frontend Web**: Static Hosting (Netlify, Vercel, Cloudflare Pages). Konfigurasi build monorepo (`base = "apps/web"`, `publish = "dist/web/browser"` yang kompatibel dengan plugin `@netlify/angular-runtime`), headers keamanan, proxy reverse ke API (`/api/*`), dan routing SPA telah disediakan terpusat via `netlify.toml` di root repo.
 - **Backend API**: Server Container / VPS dengan Persistent Volume (Railway, Fly.io, Render, atau VPS Ubuntu):
   - Modul bawaan `node:sqlite` membutuhkan Node.js runtime `>= 22.5.0`.
   - SQLite berjalan dalam mode WAL (`simplisleep.db`, `simplisleep.db-wal`, `simplisleep.db-shm`). Arahkan variabel `DB_PATH` ke direktori volume persisten (contoh: `/data/simplisleep.db`) agar data tidak hilang saat restart kontainer.

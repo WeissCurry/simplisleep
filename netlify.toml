@@ -1,9 +1,9 @@
 # Netlify configuration for SimpliSleep Angular Web App (pnpm monorepo)
 
 [build]
-  base = ""
-  command = "corepack enable && pnpm install --frozen-lockfile && pnpm --filter shared build && pnpm --filter web exec ng build"
-  publish = "apps/web/dist/web/browser"
+  base = "apps/web"
+  command = "cd ../.. && corepack enable && pnpm install --frozen-lockfile && pnpm --filter shared build && pnpm --filter web exec ng build"
+  publish = "dist/web/browser"
 
 [build.environment]
   NODE_VERSION = "22.12"
@@ -63,13 +63,13 @@
 # Jika ingin mendeploy versi Demo Statis murni (semua data mock berjalan lokal di browser,
 # tanpa memerlukan backend API/Railway):
 #
-# 1. Ubah command di atas menjadi:
-#      command = "corepack enable && pnpm install --frozen-lockfile && pnpm --filter shared build && pnpm --filter web exec ng build --configuration demo"
+# 1. Dari base directory ("apps/web"), ubah command build menjadi:
+#      command = "cd ../.. && corepack enable && pnpm install --frozen-lockfile && pnpm --filter shared build && pnpm --filter web exec ng build --configuration demo"
 #    atau gunakan script root:
-#      command = "corepack enable && pnpm install --frozen-lockfile && pnpm build:demo"
+#      command = "cd ../.. && corepack enable && pnpm install --frozen-lockfile && pnpm build:demo"
 #
 # 2. Proxy API (/api/*) di atas dapat dinonaktifkan/dihapus karena seluruh request memakai data mock.
 #
 # 3. Atau gunakan Netlify deploy context (misal branch demo):
 # [context.demo]
-#   command = "corepack enable && pnpm install --frozen-lockfile && pnpm build:demo"
+#   command = "cd ../.. && corepack enable && pnpm install --frozen-lockfile && pnpm build:demo"
