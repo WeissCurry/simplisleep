@@ -2,7 +2,8 @@
 
 [build]
   base = "apps/web"
-  command = "cd ../.. && corepack enable && pnpm install --frozen-lockfile && pnpm --filter shared build && pnpm --filter web exec ng build"
+  # SEMENTARA: build demo. Setelah API Railway live, hapus --configuration demo dan isi URL proxy /api.
+  command = "cd ../.. && corepack enable && pnpm install --frozen-lockfile && pnpm --filter shared build && pnpm --filter web exec ng build --configuration demo"
   publish = "dist/web/browser"
 
 [build.environment]
