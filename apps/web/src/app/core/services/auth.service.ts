@@ -97,7 +97,7 @@ export class AuthService {
   }
 
   /**
-   * Ambil daftar 12 Simplimate dummy untuk dipilih pada login demo
+   * Ambil daftar profil SimpliMate demo untuk dipilih pada login demo
    */
   getDemoUsers(): Observable<DummySimplimate[]> {
     if (environment.useMock) {
@@ -150,7 +150,7 @@ export class AuthService {
             id: res.user.id,
             name: res.user.name,
             avatar: res.user.avatar,
-            role: res.user.role || (matched as any).role || 'Simplimate',
+            role: res.user.role || (matched as any).role || 'SimpliMate',
             walletAddress: res.user.walletAddress || (res as any).wallet?.address || (matched as any).walletAddress,
             personality: (res.user as any).personality || (matched as any).personality || '',
             baseStreak: (matched as any).baseStreak ?? (res.user as any).baseStreak ?? 0,
@@ -183,7 +183,7 @@ export class AuthService {
             id: res.user.id,
             name: res.user.name,
             avatar: res.user.avatar || 'user-1',
-            role: res.user.role || 'Simplimate',
+            role: res.user.role || 'SimpliMate',
             walletAddress: res.user.walletAddress || (res as any).wallet?.address,
             personality: (res.user as any).personality || '',
             baseStreak: (res.user as any).baseStreak ?? 0,

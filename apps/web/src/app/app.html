@@ -65,7 +65,7 @@
             type="button"
             (click)="openDemoModal()"
             class="btn-pixel btn-pixel--ghost btn-pixel--sm flex items-center gap-2 select-none whitespace-nowrap ml-1 focus-visible:outline-2 focus-visible:outline-brand-ink focus-visible:outline-offset-1"
-            title="Klik untuk mengganti akun Simplimate demo"
+            title="Klik untuk mengganti akun SimpliMate demo"
           >
             <app-avatar [name]="currentUser()?.name || ''" [avatar]="currentUser()?.avatar || 'user-1'" size="xs" [hasShadow]="false"></app-avatar>
             <span class="font-bold text-xs text-ink truncate max-w-[95px] xl:max-w-[120px] leading-tight">
@@ -94,7 +94,7 @@
             aria-haspopup="true"
             class="w-9 h-9 min-w-[44px] min-h-[44px] rounded-[8px] border-2 border-ink bg-surface shadow-[2px_2px_0_#141414] hover:bg-brand-50 active:translate-x-0.5 active:translate-y-0.5 active:shadow-none flex items-center justify-center cursor-pointer p-0 transition-transform focus-visible:outline-3 focus-visible:outline-brand-ink"
             title="Menu Akun"
-            aria-label="Buka menu akun Simplimate"
+            aria-label="Buka menu akun SimpliMate"
           >
             <app-avatar [name]="currentUser()?.name || ''" [avatar]="currentUser()?.avatar || 'user-1'" size="xs" [hasShadow]="false"></app-avatar>
           </button>
@@ -140,7 +140,7 @@
       id="mobile-account-menu"
       role="dialog"
       aria-modal="true"
-      aria-label="Menu Akun Simplimate"
+      aria-label="Menu Akun SimpliMate"
       (keydown)="onAccountMenuKeyDown($event)"
       class="account-sheet fixed z-50 bottom-0 left-0 right-0 sm:bottom-auto sm:top-14 sm:right-3 sm:left-auto sm:w-80 bg-paper border-t-3 sm:border-3 border-ink rounded-t-[16px] sm:rounded-[12px] shadow-[0_-6px_0_#141414] sm:shadow-[6px_6px_0_#141414] min-[885px]:hidden p-4 select-none"
       [class.is-open]="isAccountMenuOpen()"
@@ -302,7 +302,7 @@
   <!-- Footer Satu Baris Gaya Wizardshock (Latar Brand-Deep, Teks Putih) -->
   <footer class="bg-brand-deep text-white py-3 border-t-3 border-ink select-none relative z-10">
     <div class="container-app text-center text-xs md:text-sm font-pixel">
-      (c) SimpliSleep · dibuat untuk Simplimates
+      (c) SimpliSleep · dibuat untuk SimpliMates
     </div>
   </footer>
 

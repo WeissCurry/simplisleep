@@ -117,4 +117,13 @@ describe('ToastService', () => {
     expect(service.activeToasts().length).toBe(0);
     expect(service.queuedCount()).toBe(0);
   });
+
+  it('should deduplicate identical toasts that are already active or queued', () => {
+    const id1 = service.error('Gagal memuat profil demo dari server.', 'Koneksi Error');
+    const id2 = service.error('Gagal memuat profil demo dari server.', 'Koneksi Error');
+
+    expect(id1).toBe(id2);
+    expect(service.activeToasts().length).toBe(1);
+    expect(service.queuedCount()).toBe(0);
+  });
 });

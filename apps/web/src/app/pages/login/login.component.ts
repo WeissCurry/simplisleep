@@ -222,7 +222,7 @@ import { CardsService, RarityBoardCard } from '../cards/cards.service';
                       </span>
                     } @else {
                       <span class="text-[10px] sm:text-xs leading-tight">
-                        Dimiliki <strong class="text-ink font-bold">{{ card.owners }}</strong> dari {{ totalUsers() }} Simplimates
+                        Dimiliki <strong class="text-ink font-bold">{{ card.owners }}</strong> dari {{ totalUsers() }} SimpliMates
                       </span>
                     }
                   </div>
@@ -252,10 +252,10 @@ import { CardsService, RarityBoardCard } from '../cards/cards.service';
         <div class="border-b-3 border-ink pb-3 text-center sm:text-left flex flex-col sm:flex-row sm:items-end justify-between gap-3">
           <div>
             <span class="font-pixel text-xs font-bold uppercase tracking-wider text-brand-ink whitespace-nowrap">
-              Mode Juri & Pengujian Cepat
+              Coba Tanpa Daftar
             </span>
             <h3 class="font-pixel text-2xl sm:text-3xl font-black text-ink uppercase tracking-tight">
-              Pilih Profil Demo Simplimate ({{ demoUsers().length || 12 }} Pilihan)
+              Pilih salah satu akun demo
             </h3>
           </div>
           <span class="font-pixel text-xs bg-brand-50 border border-brand-200 text-brand-ink px-3 py-1 font-bold rounded-[6px] self-center sm:self-auto whitespace-nowrap">
@@ -324,7 +324,7 @@ import { CardsService, RarityBoardCard } from '../cards/cards.service';
             @if (isGoogleAuthAvailable()) {
               Masuk menggunakan akun Google resmi untuk menyinkronkan profil dan catatan tidurmu.
             } @else {
-              Google Workspace OAuth hanya aktif bila client dan server dikonfigurasi dengan Client ID resmi. Untuk keperluan dewan juri, gunakan pilihan 12 profil demo di atas.
+              Google Workspace OAuth hanya aktif bila client dan server dikonfigurasi dengan Client ID resmi. Silakan gunakan pilihan akun demo di atas.
             }
           </p>
           <div class="pt-2">
@@ -404,7 +404,6 @@ export class LoginComponent implements OnInit {
       },
       error: (err) => {
         console.error('Failed to load rarity board', err);
-        this.toast.error('Gagal memuat papan kelangkaan kartu dari server.', 'Koneksi Error');
         this.isLoadingCards.set(false);
       }
     });

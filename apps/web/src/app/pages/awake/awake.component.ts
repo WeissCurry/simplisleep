@@ -125,7 +125,7 @@ import { AvatarComponent } from '../../shared/components/avatar/avatar.component
             Masih Melek Malam Ini
           </h1>
           <p class="font-pixel text-xs sm:text-sm md:lead-pixel text-ink-muted mt-1 leading-snug break-words">
-            Daftar Simplimates yang belum tidur atau terdeteksi beraktivitas saat jam tidur.
+            Daftar SimpliMates yang belum tidur atau terdeteksi beraktivitas saat jam tidur.
           </p>
         </div>
 
@@ -187,7 +187,7 @@ import { AvatarComponent } from '../../shared/components/avatar/avatar.component
                   </div>
 
                   <p class="text-[11px] sm:text-xs text-brand-ink font-semibold truncate mt-0.5">
-                    {{ user.role || 'Simplimate' }}
+                    {{ user.role || 'SimpliMate' }}
                   </p>
 
                   <!-- Status Note / Alasan melek -->
@@ -244,7 +244,7 @@ import { AvatarComponent } from '../../shared/components/avatar/avatar.component
             Semua Rekan Kerja Sudah Tidur
           </h3>
           <p class="font-sans text-xs sm:text-sm text-ink-muted max-w-md mx-auto mt-1.5 leading-relaxed">
-            Tidak ada Simplimates yang terdeteksi masih beraktivitas larut malam. Ritme istirahat terjaga dengan baik.
+            Tidak ada SimpliMates yang terdeteksi masih beraktivitas larut malam. Ritme istirahat terjaga dengan baik.
           </p>
         </div>
       }

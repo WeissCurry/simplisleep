@@ -74,7 +74,7 @@ import { Component, Input } from '@angular/core';
   `
 })
 export class AvatarComponent {
-  @Input() name = 'Simplimate';
+  @Input() name = 'SimpliMate';
   @Input() avatar = 'user-1';
   @Input() size: 'xs' | 'sm' | 'md' | 'lg' | 'xl' = 'md';
   @Input() status: 'sleeping' | 'awake' | 'none' = 'none';

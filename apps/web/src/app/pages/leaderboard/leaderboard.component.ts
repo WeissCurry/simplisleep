@@ -151,7 +151,7 @@ interface OnChainVerificationResult {
         <div>
           <div class="flex items-center gap-2.5 flex-wrap">
             <h1 class="font-pixel text-xl sm:text-3xl md:text-4xl font-bold text-ink uppercase tracking-tight">
-              Leaderboard Simplimates
+              Leaderboard SimpliMates
             </h1>
             <!-- On-Chain Status Badge dekat judul minggu -->
             <button
@@ -314,7 +314,7 @@ interface OnChainVerificationResult {
               </button>
             </div>
             <p class="font-sans text-xs sm:text-sm text-ink-muted mt-1">
-              Simplimates dengan rata-rata skor tidur tertinggi periode ini
+              SimpliMates dengan rata-rata skor tidur tertinggi periode ini
             </p>
           </div>
 
@@ -399,7 +399,7 @@ interface OnChainVerificationResult {
             <div>
               <div class="flex items-center gap-2">
                 <h3 class="font-pixel text-base sm:text-xl font-bold text-ink uppercase">
-                  Daftar Lengkap Skor Simplimates
+                  Daftar Lengkap Skor SimpliMates
                 </h3>
               </div>
               <p class="font-sans text-xs text-ink-muted mt-0.5">

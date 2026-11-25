@@ -32,7 +32,7 @@ import { ALL_28_CARDS, CARD_TRIVIA_MAP, CardCollectionState, CardsService, Rarit
           </p>
         </div>
 
-        <!-- Mode Juri & Stats Counter -->
+        <!-- Lihat Semua Kartu & Stats Counter -->
         <div class="flex flex-col sm:items-end gap-2.5 sm:gap-3 shrink-0">
           <div class="flex items-center gap-2">
             <span class="font-pixel text-xs font-bold text-ink uppercase whitespace-nowrap">Koleksi Terbuka:</span>
@@ -41,16 +41,16 @@ import { ALL_28_CARDS, CARD_TRIVIA_MAP, CardCollectionState, CardsService, Rarit
             </span>
           </div>
 
-          <!-- Quick Toggle Mode Juri (No Wrap, Full Width in Mobile) -->
+          <!-- Quick Toggle Lihat Semua Kartu (No Wrap, Full Width in Mobile) -->
           <button
             type="button"
             (click)="toggleJudgeMode()"
             class="btn-pixel btn-pixel--sm rounded-[8px] whitespace-nowrap font-bold uppercase cursor-pointer w-full sm:w-auto justify-center text-xs sm:text-sm"
             [ngClass]="judgeMode ? 'btn-pixel--sun' : 'btn-pixel--ghost'"
-            aria-label="Toggle mode dewan juri untuk membuka seluruh 28 kartu"
-            title="Mode untuk Dewan Juri menginspeksi seluruh 28 kartu sekaligus"
+            aria-label="Toggle untuk menampilkan seluruh 28 kartu pratinjau"
+            title="Mode pratinjau untuk melihat seluruh 28 kartu sekaligus"
           >
-            <span>Mode Juri:</span>
+            <span>Lihat Semua Kartu:</span>
             <span class="underline ml-1 whitespace-nowrap">{{ judgeMode ? 'Buka Semua (Aktif)' : 'Mode Normal' }}</span>
           </button>
         </div>
@@ -354,7 +354,7 @@ import { ALL_28_CARDS, CARD_TRIVIA_MAP, CardCollectionState, CardsService, Rarit
               </h2>
             </div>
             <span class="font-pixel text-xs bg-brand-50 border border-brand-200 text-brand-ink px-2.5 py-1 font-bold uppercase rounded-[6px] self-start sm:self-auto whitespace-nowrap">
-              Total: {{ rarityBoard?.totalUsers || 12 }} Simplimates
+              Total: {{ rarityBoard?.totalUsers || 12 }} SimpliMates
             </span>
           </div>
 
@@ -491,7 +491,7 @@ import { ALL_28_CARDS, CARD_TRIVIA_MAP, CardCollectionState, CardsService, Rarit
                   <!-- Bar & Informasi Kepemilikan -->
                   <div class="flex items-center gap-2 sm:gap-3 flex-wrap text-xs text-ink-muted">
                     <span class="font-sans whitespace-nowrap">
-                      Dimiliki <strong class="text-ink font-bold">{{ item.owners }}</strong> dari {{ rarityBoard?.totalUsers || 12 }} Simplimates
+                      Dimiliki <strong class="text-ink font-bold">{{ item.owners }}</strong> dari {{ rarityBoard?.totalUsers || 12 }} SimpliMates
                     </span>
 
                     <!-- Mini progress bar -->
@@ -774,7 +774,7 @@ export class CardsComponent implements OnInit, AfterViewInit {
     this.judgeMode = !this.judgeMode;
     this.refreshStats();
     if (this.judgeMode) {
-      this.toast.warning('Mode Juri aktif: Seluruh 28 kartu terbuka untuk inspeksi.', 'Mode Juri');
+      this.toast.warning('Semua 28 kartu ditampilkan untuk pratinjau.', 'Pratinjau');
     } else {
       this.toast.info('Mode Normal aktif: Hanya kartu milikmu yang terbuka.', 'Mode Normal');
     }

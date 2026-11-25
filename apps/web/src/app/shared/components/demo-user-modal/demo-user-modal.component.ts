@@ -57,11 +57,11 @@ import { PixelButtonComponent } from '../pixel-button/pixel-button.component';
           <!-- Description banner (Teks ringkas tanpa emoji) -->
           <div class="p-2.5 sm:p-3 bg-white border-b-2 border-ink text-[11px] sm:text-xs text-ink-muted leading-tight">
             <p>
-              Mode demo juri dan evaluator. Tersedia 3 profil pilihan untuk menguji simulasi tidur, leaderboard, dan koleksi kartu.
+              Mode demo pengujian cepat. Tersedia 3 profil pilihan untuk menguji simulasi tidur, leaderboard, dan koleksi kartu.
             </p>
           </div>
 
-          <!-- 3 Simplimates Cards Stack -->
+          <!-- 3 SimpliMates Cards Stack -->
           <div class="p-2.5 sm:p-4 max-h-[60vh] overflow-y-auto space-y-2 sm:space-y-2.5">
             @for (user of users(); track user.id) {
               <div

@@ -85,6 +85,12 @@ export class ToastService {
   }
 
   private show(type: ToastType, message: string, title?: string, duration?: number): string {
+    // Deduplikasi: abaikan toast jika judul dan pesan yang identik masih tampil atau mengantre
+    const existing = this._toasts().find((t) => t.message === message && t.title === title);
+    if (existing) {
+      return existing.id;
+    }
+
     const id = `toast-${++this.counter}`;
     const toastDuration = duration ?? (type === 'error' ? this.errorDuration : this.defaultDuration);
     const newToast: Toast = {

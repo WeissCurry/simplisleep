@@ -136,7 +136,7 @@ import {
         </svg>
       </div>
 
-      <!-- Layer 3: Siluet Terdepan Kota Simplimates Tidur (#8E1631) — Pijakan Dasar y=535-543 -->
+      <!-- Layer 3: Siluet Terdepan Kota SimpliMates Tidur (#8E1631) — Pijakan Dasar y=535-543 -->
       <div
         #layer3
         class="absolute inset-0 w-full h-full pointer-events-none will-change-transform z-3"
