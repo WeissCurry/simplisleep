@@ -1,0 +1,62 @@
+// ==========================================================================
+// SimpliSleep Mobile Account Popover / Bottom Sheet Transition
+// - Buka: translateY 100% -> 0 + opacity fade-in, ~0.20s ease-out
+// - Tutup: translateY 0 -> 100% + opacity fade-out, ~0.18s ease-in
+// ==========================================================================
+.account-backdrop {
+  opacity: 0;
+  transition: opacity 0.18s ease-in;
+  will-change: opacity;
+
+  &.is-open {
+    opacity: 1;
+    transition: opacity 0.2s ease-out;
+  }
+}
+
+.account-sheet {
+  transform: translateY(100%);
+  opacity: 0.8;
+  transition: transform 0.18s ease-in, opacity 0.18s ease-in;
+  will-change: transform, opacity;
+
+  &.is-open {
+    transform: translateY(0);
+    opacity: 1;
+    transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease-out;
+  }
+
+  @media (min-width: 640px) {
+    transform: translateY(-8px) scale(0.96);
+    opacity: 0;
+
+    &.is-open {
+      transform: translateY(0) scale(1);
+      opacity: 1;
+    }
+  }
+}
+
+// ==========================================================================
+// Mobile Bottom Navigation Bar: Sliding Active Pill Indicator
+// ==========================================================================
+.tab-active-indicator {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              opacity 0.2s ease;
+}
+
+.tab-icon {
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+// ==========================================================================
+// Accessibility: prefers-reduced-motion (WCAG AAA)
+// ==========================================================================
+@media (prefers-reduced-motion: reduce) {
+  .account-backdrop,
+  .account-sheet,
+  .tab-active-indicator,
+  .tab-icon {
+    transition: none !important;
+  }
+}

@@ -1,0 +1,332 @@
+@import "tailwindcss";
+
+@theme {
+  --font-pixel: 'Pixelify Sans', 'Silkscreen', monospace;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  /* Token Warna Final SimpliSleep — SimpliDOTS Light Theme */
+  --color-brand: #EC385B;
+  --color-brand-strong: #D42A4C;
+  --color-brand-ink: #C21F42;
+  --color-brand-deep: #8E1631;
+  --color-brand-50: #FFF1F4;
+  --color-brand-100: #FFE0E7;
+  --color-brand-200: #FFC2CF;
+  --color-brand-300: #F58FA3;
+  --color-ink: #141414;
+  --color-ink-muted: #5C5C5C;
+  --color-paper: #FFFBF8;
+  --color-surface: #FFFFFF;
+  --color-sun: #FFC93C;
+  --color-success: #1F8A4C;
+  --color-warning: #B45309;
+  --color-danger: #C21F42;
+
+  /* Rarity Tokens */
+  --color-rarity-common: #5C5C5C;
+  --color-rarity-rare: #2563EB;
+  --color-rarity-epic: #9333EA;
+  --color-rarity-legendary: #B45309;
+}
+
+/* ==========================================================================
+   Base & Typography
+   ========================================================================== */
+html, body {
+  font-family: var(--font-sans);
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-brand-ink);
+  outline-offset: 2px;
+}
+
+.font-pixel {
+  font-family: var(--font-pixel);
+  letter-spacing: 0.03em;
+}
+
+/* ==========================================================================
+   Hero Seamless Transition: hilangkan border-bottom keras di container hero
+   ========================================================================== */
+section:has(app-parallax-hero),
+app-parallax-hero {
+  border-bottom: none !important;
+}
+
+/* ==========================================================================
+   Utility Global Wizardshock-SimpliDOTS (Agak Rounded: Tactile Modern)
+   ========================================================================== */
+
+/* 1. Tombol Chunky Pixel (.btn-pixel & varian, radius 8px, sm 6px) */
+.btn-pixel {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-family: var(--font-pixel);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+  padding: 13px 20px 12px;
+  background-color: var(--color-brand-strong);
+  color: #ffffff;
+  border: 2px solid var(--color-ink);
+  border-radius: 8px;
+  box-shadow: 6px 6px 0px var(--color-ink);
+  cursor: pointer;
+  user-select: none;
+  text-decoration: none;
+  line-height: 1.2;
+  transition: transform 0.1s ease, box-shadow 0.1s ease, background-color 0.15s ease, color 0.15s ease;
+}
+
+.btn-pixel:hover:not(:disabled) {
+  transform: translateY(-3px);
+  box-shadow: 8px 8px 0px var(--color-ink);
+  background-color: var(--color-brand);
+  color: #ffffff;
+}
+
+.btn-pixel:active:not(:disabled) {
+  transform: translateY(2px);
+  box-shadow: 2px 2px 0px var(--color-ink);
+}
+
+.btn-pixel:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: 3px 3px 0px var(--color-ink);
+}
+
+/* Varian Ghost */
+.btn-pixel--ghost {
+  background-color: var(--color-surface);
+  color: var(--color-ink);
+  border: 2px solid var(--color-ink);
+  border-radius: 8px;
+  box-shadow: 6px 6px 0px var(--color-ink);
+}
+
+.btn-pixel--ghost:hover:not(:disabled) {
+  background-color: var(--color-brand-50);
+  color: var(--color-brand-ink);
+}
+
+/* Varian Sun (Aksen Hangat / Kuning) */
+.btn-pixel--sun {
+  background-color: var(--color-sun);
+  color: var(--color-ink);
+  border: 2px solid var(--color-ink);
+  border-radius: 8px;
+  box-shadow: 6px 6px 0px var(--color-ink);
+}
+
+.btn-pixel--sun:hover:not(:disabled) {
+  background-color: #ffd866;
+  color: var(--color-ink);
+}
+
+/* Varian Small (Radius 6px) */
+.btn-pixel--sm {
+  padding: 8px 14px 7px;
+  font-size: 0.85rem;
+  border-radius: 6px;
+  box-shadow: 4px 4px 0px var(--color-ink);
+}
+
+.btn-pixel--sm:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 6px 6px 0px var(--color-ink);
+}
+
+.btn-pixel--sm:active:not(:disabled) {
+  transform: translateY(2px);
+  box-shadow: 1px 1px 0px var(--color-ink);
+}
+
+/* 2. Panel Pixel (.panel-pixel, radius 12px) */
+.panel-pixel {
+  background-color: var(--color-surface);
+  border: 3px solid var(--color-ink);
+  box-shadow: 6px 6px 0px var(--color-ink);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* 3. Global App Container (.container-app & .section-wrap) */
+.container-app,
+.section-wrap {
+  width: 100%;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: 16px !important;
+  box-sizing: border-box;
+}
+
+@media (min-width: 640px) {
+  .container-app,
+  .section-wrap {
+    padding-inline: 24px !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-app,
+  .section-wrap {
+    padding-inline: 32px !important;
+  }
+}
+
+/* 4. Lead Paragraph Pixel (.lead-pixel) */
+.lead-pixel {
+  font-family: var(--font-pixel);
+  font-size: 1.25em;
+  line-height: 1.35;
+}
+
+@media (min-width: 768px) {
+  .lead-pixel {
+    font-size: 1.5em;
+  }
+}
+
+/* 5. Pixelated Image Rendering (.pixelated, gambar radius 8px) */
+.pixelated {
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  border-radius: 8px;
+}
+
+/* ==========================================================================
+   Retro Aliases untuk Kelas .pixel-* Lama
+   (Mempertahankan kompatibilitas halaman yang belum diubah agent lain)
+   ========================================================================== */
+.pixel-border {
+  border: 2px solid var(--color-ink);
+  border-radius: 8px;
+}
+
+.pixel-border-sm {
+  border: 1.5px solid var(--color-ink);
+  border-radius: 6px;
+}
+
+.pixel-border-thick {
+  border: 3px solid var(--color-ink);
+  border-radius: 10px;
+}
+
+.pixel-shadow-sm {
+  box-shadow: 2px 2px 0px var(--color-ink);
+}
+
+.pixel-shadow {
+  box-shadow: 4px 4px 0px var(--color-ink);
+}
+
+.pixel-shadow-lg {
+  box-shadow: 6px 6px 0px var(--color-ink);
+}
+
+.pixel-shadow-purple {
+  box-shadow: 4px 4px 0px var(--color-brand-strong);
+}
+
+.pixel-shadow-orange {
+  box-shadow: 4px 4px 0px var(--color-sun);
+}
+
+.pixel-card {
+  border: 2px solid var(--color-ink);
+  box-shadow: 5px 5px 0px var(--color-ink);
+  border-radius: 12px;
+  background-color: var(--color-surface);
+  overflow: hidden;
+}
+
+.pixel-card-night {
+  border: 2px solid var(--color-ink);
+  box-shadow: 5px 5px 0px var(--color-ink);
+  border-radius: 12px;
+  background-color: var(--color-brand-deep);
+  color: #ffffff;
+  overflow: hidden;
+}
+
+.pixel-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-pixel);
+  font-weight: 700;
+  white-space: nowrap;
+  border: 2px solid var(--color-ink);
+  box-shadow: 4px 4px 0px var(--color-ink);
+  border-radius: 8px;
+  cursor: pointer;
+  user-select: none;
+  transition: transform 0.1s ease, box-shadow 0.1s ease, background-color 0.15s ease;
+}
+
+.pixel-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 6px 6px 0px var(--color-ink);
+}
+
+.pixel-btn:active:not(:disabled) {
+  transform: translateY(2px);
+  box-shadow: 1px 1px 0px var(--color-ink);
+}
+
+.pixel-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  box-shadow: 2px 2px 0px var(--color-ink);
+  transform: none;
+}
+
+.pixel-btn-night {
+  background-color: var(--color-brand-deep);
+  color: #ffffff;
+  border-color: var(--color-ink);
+}
+
+.pixel-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-family: var(--font-pixel);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border: 2px solid currentColor;
+  box-shadow: 2px 2px 0px currentColor;
+  white-space: nowrap;
+}
+
+/* ==========================================================================
+   Prefers-Reduced-Motion (A11y WCAG AA)
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
