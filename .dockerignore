@@ -1,0 +1,10 @@
+node_modules
+dist
+.env*
+*.db
+*.db-wal
+*.db-shm
+assets/cards/_old
+apps/web/dist
+.angular
+.git

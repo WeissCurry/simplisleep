@@ -203,7 +203,7 @@ pnpm --filter web build
 
 ### 3. Checklist Penting Sebelum Go-Live
 - Set `NODE_ENV=production`.
-- Set `ENABLE_DEMO_LOGIN=false` agar autentikasi demo dinonaktifkan.
+- Set `ENABLE_DEMO_LOGIN=false` agar autentikasi demo dinonaktifkan (atau `true` bila evaluasi masih memerlukan login demo).
 - Pastikan `JWT_SECRET` dan `WALLET_ENC_KEY` telah terisi di environment server.
 - Siapkan cron job mingguan setiap Senin pukul 00:05 WIB untuk memicu penutupan minggu klasemen:
   ```bash
@@ -211,6 +211,47 @@ pnpm --filter web build
   curl -s -X POST "https://api.domain.com/api/admin/close-week?week=${PREV_WEEK}" \
     -H "x-admin-token: ${ADMIN_TOKEN}"
   ```
+
+### 4. Panduan Deployment API ke Railway
+SimpliSleep menyertakan konfigurasi `Dockerfile` dan `railway.json` di root repositori untuk deployment container API yang andal di monorepo pnpm:
+
+1. **New Project dari GitHub**:
+   - Buka dashboard [Railway](https://railway.app).
+   - Buat project baru: **New Project** > **Deploy from GitHub repo** > pilih repositori `simplisleep`.
+2. **Otomasi Build via Dockerfile**:
+   - Railway otomatis mendeteksi `railway.json` dan `Dockerfile` pada root monorepo.
+   - Build container menggunakan image `node:24-slim` dengan modul `node:sqlite` bawaan, menginstal dependensi via `pnpm install --frozen-lockfile --filter api...`, serta melakukan build bertahap pada paket `shared` lalu `api`.
+3. **Tambah Persistent Volume mount `/data`**:
+   - Pada kartu service API di dashboard Railway, klik **+ Add** > **Volume**.
+   - Set **Mount Path** ke `/data`.
+   - Ini memastikan file database SQLite (`/data/simplisleep.db`) beserta file WAL tetap persisten dan tidak hilang saat container restart atau redeploy.
+4. **Variables dari `.env.production`**:
+   - Buka tab **Variables** pada service API di Railway.
+   - Masukkan seluruh variabel lingkungan production dari file `.env.production`:
+     - `NODE_ENV=production`
+     - `PORT=3100` (atau biarkan Railway menyuntikkan port otomatis)
+     - `DB_PATH=/data/simplisleep.db`
+     - `AUTO_SEED=true` (mengisi data demo otomatis saat database kosong)
+     - `TRUST_PROXY=true` (mempercayai proxy IP di belakang Railway)
+     - `JWT_SECRET=<secret acak 64 karakter>`
+     - `WALLET_ENC_KEY=<secret acak 64 karakter>`
+     - `ADMIN_TOKEN=<token rahasia admin>`
+     - `WEB_ORIGIN=https://<nama-app>.netlify.app`
+     - `ENABLE_DEMO_LOGIN=true`
+     - Variabel Google Auth & Sepolia jika sudah disiapkan.
+5. **Generate Domain**:
+   - Buka tab **Settings** > bagian **Networking** > klik **Generate Domain** (misal: `simplisleep-api-production.up.railway.app`).
+   - Railway akan otomatis memantau health check deployment melalui path `/api/health` yang didefinisikan di `railway.json`.
+6. **Hubungkan ke Frontend Netlify (`netlify.toml`)**:
+   - Setelah domain Railway aktif dan mengembalikan respons `ok` di `/api/health`, buka file `netlify.toml` di frontend.
+   - Perbarui target URL redirect API dengan domain Railway yang baru dibuat:
+     ```toml
+     [[redirects]]
+       from = "/api/*"
+       to = "https://simplisleep-api-production.up.railway.app/api/:splat"
+       status = 200
+       force = true
+     ```
 
 ---
 

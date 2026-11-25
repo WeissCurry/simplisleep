@@ -38,11 +38,13 @@ getDb();
 validateDemoWalletAddress();
 
 const port = Number(process.env.PORT) || 3100;
-console.log(`[SimpliSleep API] Server running on http://localhost:${port}`);
+const hostname = process.env.HOST || '0.0.0.0';
+console.log(`[SimpliSleep API] Server running on http://${hostname}:${port}`);
 
 serve({
   fetch: app.fetch,
-  port
+  port,
+  hostname
 });
 
 export default app;
