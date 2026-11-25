@@ -68,7 +68,7 @@ simplisleep/ (pnpm workspace)
 
 ## Prasyarat Sistem
 
-- **Node.js**: Versi `>= 22.5.0` (wajib untuk modul bawaan `node:sqlite`). Periksa: `node -v`
+- **Node.js**: Versi `>= 22.22.3` atau `>= 24.15` (Angular CLI 22); API butuh minimal `22.5` untuk `node:sqlite`. Periksa: `node -v`
 - **pnpm**: Versi `>= 9.0.0`. Periksa: `pnpm -v`
 - **Peramban Web Modern**: Chrome, Edge, Firefox, atau Safari dengan dukungan JavaScript aktif.
 
@@ -187,7 +187,7 @@ Variabel lingkungan dibaca dari root `.env` atau environment server. Tabel berik
 ### 1. Arsitektur Hosting yang Disarankan
 - **Frontend Web**: Static Hosting (Netlify, Vercel, Cloudflare Pages). Konfigurasi build monorepo (`base = "apps/web"`, `publish = "dist/web/browser"` yang kompatibel dengan plugin `@netlify/angular-runtime`), headers keamanan, proxy reverse ke API (`/api/*`), dan routing SPA telah disediakan terpusat via `netlify.toml` di root repo.
 - **Backend API**: Server Container / VPS dengan Persistent Volume (Railway, Fly.io, Render, atau VPS Ubuntu):
-  - Modul bawaan `node:sqlite` membutuhkan Node.js runtime `>= 22.5.0`.
+  - Railway / Nixpacks atau container host memerlukan Node.js versi 24 (telah dikonfigurasi via `"engines": { "node": ">=22.22.3" }` di `package.json` root agar runtime memilih versi yang sesuai). Modul bawaan `node:sqlite` membutuhkan Node.js runtime `>= 22.5.0`.
   - SQLite berjalan dalam mode WAL (`simplisleep.db`, `simplisleep.db-wal`, `simplisleep.db-shm`). Arahkan variabel `DB_PATH` ke direktori volume persisten (contoh: `/data/simplisleep.db`) agar data tidak hilang saat restart kontainer.
 - **HTTPS Wajib**: Browser Notification API pada fitur "Ingatkan Tidur" hanya aktif pada Secure Context (HTTPS) atau localhost.
 

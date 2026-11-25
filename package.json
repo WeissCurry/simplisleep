@@ -10,6 +10,9 @@
     "test": "pnpm -r test",
     "lint": "pnpm -r lint"
   },
+  "engines": {
+    "node": ">=22.22.3"
+  },
   "devDependencies": {
     "concurrently": "^9.1.2"
   }

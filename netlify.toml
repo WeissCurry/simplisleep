@@ -6,7 +6,7 @@
   publish = "dist/web/browser"
 
 [build.environment]
-  NODE_VERSION = "22.12"
+  NODE_VERSION = "24"
   PNPM_VERSION = "9.15.4"
 
 # ==============================================================================
