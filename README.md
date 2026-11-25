@@ -253,6 +253,35 @@ SimpliSleep menyertakan konfigurasi `Dockerfile` dan `railway.json` di root repo
        force = true
      ```
 
+### 5. Deploy API ke VPS (bundle)
+Untuk lingkungan VPS berspesifikasi rendah (misalnya RAM 1GB yang terbatas), SimpliSleep menyediakan mekanisme bundling mandiri menjadi satu file executable ESM (`index.mjs`, ~2.4 MB) sehingga server VPS tidak perlu menjalankan `pnpm install` atau menyimpan `node_modules`:
+
+1. **Build Bundle Mandiri Secara Lokal**:
+   ```bash
+   pnpm bundle:api
+   ```
+   Perintah ini akan:
+   - Mengompilasi paket `shared`.
+   - Mem-bundle backend API menjadi satu file `deploy/api/index.mjs` menggunakan esbuild (`--platform=node --target=node22 --format=esm --external:node:*`).
+   - Menyalin aset runtime (`assets/cards/*.json` dan ABI contracts).
+   - Menyiapkan `package.json` minimal (`type: module`) dan konfigurasi PM2 `ecosystem.config.cjs`.
+
+2. **Deploy ke VPS**:
+   - Salin isi folder `deploy/api` ke direktori VPS tujuan (atau gunakan branch `deploy-api` yang khusus berisi bundle ini).
+   - Buat file `.env` di direktori tersebut berisi konfigurasi produksi (salin dari `.env.production`).
+
+3. **Menjalankan Server**:
+   - **Langsung dengan Node.js (>= 22.5 / 22.12)**:
+     ```bash
+     node --env-file=.env index.mjs
+     ```
+   - **Dengan Process Manager (PM2)**:
+     ```bash
+     pm2 start ecosystem.config.cjs
+     pm2 save
+     ```
+     Konfigurasi `ecosystem.config.cjs` telah memuat `--env-file=.env`, `APP_ROOT=.`, dan batas restart memori `200M`.
+
 ---
 
 ## Smart Contract Sepolia

@@ -131,7 +131,9 @@ let cachedLeaderboardCommitAbi: Abi | null = null;
 export function getSleepCardsAbi(): Abi {
   if (cachedSleepCardsAbi) return cachedSleepCardsAbi;
 
+  const appRoot = process.env.APP_ROOT;
   const candidates = [
+    ...(appRoot ? [path.resolve(appRoot, 'packages/contracts/abi/SleepCards.json')] : []),
     path.resolve(__dirname, '../../../../packages/contracts/abi/SleepCards.json'),
     path.resolve(process.cwd(), 'packages/contracts/abi/SleepCards.json'),
     path.resolve(process.cwd(), '../contracts/abi/SleepCards.json'),
@@ -156,7 +158,9 @@ export function getSleepCardsAbi(): Abi {
 export function getLeaderboardCommitAbi(): Abi {
   if (cachedLeaderboardCommitAbi) return cachedLeaderboardCommitAbi;
 
+  const appRoot = process.env.APP_ROOT;
   const candidates = [
+    ...(appRoot ? [path.resolve(appRoot, 'packages/contracts/abi/LeaderboardCommit.json')] : []),
     path.resolve(__dirname, '../../../../packages/contracts/abi/LeaderboardCommit.json'),
     path.resolve(process.cwd(), 'packages/contracts/abi/LeaderboardCommit.json'),
     path.resolve(process.cwd(), '../contracts/abi/LeaderboardCommit.json'),

@@ -65,7 +65,9 @@ let cachedCatalog: CardCatalogItem[] | null = null;
 let cachedRarityConfig: RarityConfig | null = null;
 
 function resolvePath(relativePath: string): string {
+  const appRoot = process.env.APP_ROOT;
   const candidates = [
+    ...(appRoot ? [path.resolve(appRoot, relativePath)] : []),
     path.resolve(process.cwd(), relativePath),
     path.resolve(process.cwd(), `../../${relativePath}`),
     path.resolve(__dirname, `../../../../${relativePath}`)

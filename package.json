@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "pnpm --filter shared build && concurrently -k -p \"[{name}]\" -n \"web,api\" -c \"magenta.bold,cyan.bold\" \"pnpm --filter web dev\" \"pnpm --filter api dev\"",
     "build": "pnpm -r build",
+    "bundle:api": "pnpm --filter shared build && pnpm --filter api bundle && node scripts/prepare-deploy-api.js",
     "build:demo": "pnpm --filter shared build && pnpm --filter web exec ng build --configuration demo",
     "test": "pnpm -r test",
     "lint": "pnpm -r lint"

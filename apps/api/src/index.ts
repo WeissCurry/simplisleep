@@ -8,7 +8,9 @@ import { validateDemoWalletAddress } from './services/chain.js';
 // Muat file .env root jika ada dan belum dimuat oleh flag --env-file
 try {
   if (typeof process.loadEnvFile === 'function') {
-    const rootEnv = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../../.env');
+    const rootEnv = process.env.APP_ROOT
+      ? path.resolve(process.env.APP_ROOT, '.env')
+      : path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../../.env');
     process.loadEnvFile(rootEnv);
   }
 } catch {
