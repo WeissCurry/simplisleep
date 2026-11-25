@@ -1,0 +1,18 @@
+{
+  "Common": {
+    "weight": 55,
+    "count": 12
+  },
+  "Rare": {
+    "weight": 28,
+    "count": 8
+  },
+  "Epic": {
+    "weight": 12,
+    "count": 5
+  },
+  "Legendary": {
+    "weight": 5,
+    "count": 3
+  }
+}

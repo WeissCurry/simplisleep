@@ -1,0 +1,254 @@
+[
+  {
+    "id": "orange-cat",
+    "name": "Kucing Oren",
+    "rarity": "Common",
+    "image": "orange-cat.png",
+    "description": "Meringkuk bulat seperti donat kayu manis dengan gelembung ingus raksasa kembang-kempis dan air liur menetes ke lantai.",
+    "trivia": "Kucing menghabiskan sekitar 70% hidupnya untuk tidur. Sisanya buat minta makan dan bikin rusuh di jam 3 pagi 🐱💤",
+    "triviaType": "fakta"
+  },
+  {
+    "id": "sloth",
+    "name": "Kungkang Santai",
+    "rarity": "Common",
+    "image": "sloth.png",
+    "description": "Tidur bergelantungan satu cakar hampir lepas dengan topi tidur melorot menutupi seluruh matanya.",
+    "trivia": "Kukang bisa tidur belasan jam sehari. Bahaya terbesarnya bukan tidur, tapi saat turun pohon seminggu sekali buat buang air 💩",
+    "triviaType": "fakta"
+  },
+  {
+    "id": "corgi",
+    "name": "Anjing Corgi",
+    "rarity": "Common",
+    "image": "corgi.png",
+    "description": "Telentang pasrah dengan empat kaki pendek kaku menghadap langit-langit dan lidah menjulur keluar menyamping.",
+    "trivia": "Anjing corgi sering tidur telentang karena merasa sangat aman dan untuk mendinginkan perutnya lewat udara sejuk 🐶❄️",
+    "triviaType": "fakta"
+  },
+  {
+    "id": "hamster",
+    "name": "Hamster Kenyang",
+    "rarity": "Common",
+    "image": "hamster.png",
+    "description": "Kepala nyungsep ke dasar mangkuk biji bunga matahari, menyisakan pantat bulat dan kaki kecil mencuat ke atas.",
+    "trivia": "Hamster adalah hewan krepuskular dan nokturnal. Siang hari molor pulas, giliran kamu tidur dia malah ngebut di roda putar 🐹🎡",
+    "triviaType": "fakta"
+  },
+  {
+    "id": "white-rabbit",
+    "name": "Kelinci Putih",
+    "rarity": "Common",
+    "image": "white-rabbit.png",
+    "description": "Telungkup gepeng bagai adonan pancake gagal dengan telinga panjang kusut menutupi seluruh wajahnya.",
+    "trivia": "Kelinci bisa tidur dengan mata terbuka lebar saat waspada! Kalau sudah sangat rileks, mereka tidur 'flop' telungkup gepeng 🐰😴",
+    "triviaType": "fakta"
+  },
+  {
+    "id": "hedgehog",
+    "name": "Landak Mini",
+    "rarity": "Common",
+    "image": "hedgehog.png",
+    "description": "Tidur telentang di atas daun kering dengan bantal mini kebesaran menimpa dahinya sambil mendengkur halus.",
+    "trivia": "Landak mini bisa tidur sampai 18 jam sehari, dan di alam liar mereka berhibernasi saat musim dingin. Bangun-bangun langsung cari serangga 🦔💤",
+    "triviaType": "fakta"
+  },
+  {
+    "id": "yellow-duck",
+    "name": "Bebek Kuning",
+    "rarity": "Common",
+    "image": "yellow-duck.png",
+    "description": "Berdiri oleng satu kaki nyaris tumbang, kepalanya diselipkan terbalik di bawah sayap bersama gelembung tidur besar.",
+    "trivia": "Bebek bisa tidur dengan satu mata terbuka dan setengah otak tetap terjaga (tidur unihemisfer) untuk mengawasi bahaya 🦆👀",
+    "triviaType": "fakta"
+  },
+  {
+    "id": "capybara",
+    "name": "Kapibara Santuy",
+    "rarity": "Common",
+    "image": "capybara.png",
+    "description": "Duduk kaku dengan ekspresi pasrah tanpa jiwa, sebutir jeruk di atas kepala dan satu lagi di ujung hidungnya.",
+    "trivia": "Kapibara jago berendam berjam-jam dengan cuma hidung yang menyembul, dan sering terlihat ketiduran di pinggir air sambil santai 🫧💤",
+    "triviaType": "fakta"
+  },
+  {
+    "id": "red-panda",
+    "name": "Panda Merah",
+    "rarity": "Common",
+    "image": "red-panda.png",
+    "description": "Tengkurap memeluk erat ekor belangnya sendiri yang ditarik sampai menutupi seluruh tubuhnya seperti selimut tebal.",
+    "trivia": "Panda merah melingkarkan ekor tebalnya ke seluruh tubuh saat tidur untuk dijadikan selimut alami penahan hawa dingin 🦊🧣",
+    "triviaType": "fakta"
+  },
+  {
+    "id": "otter",
+    "name": "Berang-berang Apung",
+    "rarity": "Common",
+    "image": "otter.png",
+    "description": "Mengapung telentang memeluk bantal donat mini dengan mulut menganga lebar meneteskan liur ke air.",
+    "trivia": "Berang-berang laut tidur mengapung sambil bergandengan tangan dengan sesamanya agar tidak hanyut terbawa arus ombak 🦦🤝",
+    "triviaType": "fakta"
+  },
+  {
+    "id": "mini-pig",
+    "name": "Babi Mini",
+    "rarity": "Common",
+    "image": "mini-pig.png",
+    "description": "Setengah badannya merosot jatuh dari bantal empuk ke lantai, hidung peseknya mendengkur keras bikin lantai bergetar.",
+    "trivia": "Babi suka tidur berdempetan bareng temannya, dan seperti manusia mereka juga mengalami fase tidur REM, fase saat mimpi biasanya terjadi 🐷💭",
+    "triviaType": "fakta"
+  },
+  {
+    "id": "chick",
+    "name": "Anak Ayam",
+    "rarity": "Common",
+    "image": "chick.png",
+    "description": "Terjepit terbalik di dalam cangkang telur setengah pecah, hanya kaki kecilnya yang menendang-nendang pelan di udara.",
+    "trivia": "Anak ayam sering ketiduran dengan kepala pelan-pelan menunduk sampai nyaris nyungsep ke tanah, lalu menyelinap ke bawah sayap induknya biar hangat 🐥",
+    "triviaType": "fakta"
+  },
+  {
+    "id": "panda",
+    "name": "Panda Rebah",
+    "rarity": "Rare",
+    "image": "panda.png",
+    "description": "Merosot di batang bambu sampai dagunya nempel ke perut buncit, tunas bambu masih menggantung di mulut terbukanya.",
+    "trivia": "Panda raksasa bisa tidur di posisi apa saja: nyangkut di dahan, duduk, sampai terjungkal setelah kenyang mengunyah bambu 🐼🎋",
+    "triviaType": "fakta"
+  },
+  {
+    "id": "koala",
+    "name": "Koala Eukaliptus",
+    "rarity": "Rare",
+    "image": "koala.png",
+    "description": "Memeluk batang pohon terlalu kencang sampai pipinya gepeng tertekan, masker tidur melorot sampai ke leher.",
+    "trivia": "Koala tidur hingga 18-22 jam sehari bukan karena pemalas, tapi karena daun eukaliptus sangat rendah kalori dan energi 🐨🌿",
+    "triviaType": "fakta"
+  },
+  {
+    "id": "red-fox",
+    "name": "Rubah Merah",
+    "rarity": "Rare",
+    "image": "red-fox.png",
+    "description": "Tertidur melingkar bagai pretzel rumit, ekor lebatnya ditarik menutupi kepala demi memblokir suara alarm dunia nyata.",
+    "trivia": "Rubah merah tidur melingkar dan menyembunyikan hidungnya di balik ekor lebat agar tetap hangat di tengah salju dingin 🦊❄️",
+    "triviaType": "fakta"
+  },
+  {
+    "id": "polar-bear",
+    "name": "Beruang Kutub",
+    "rarity": "Rare",
+    "image": "polar-bear.png",
+    "description": "Tidur telentang di bongkahan es mini sampai kakinya menggantung di air, syal merah melilit kepala seperti serban tidur.",
+    "trivia": "Beruang kutub bisa tidur siang 7-8 jam sehari demi menghemat energi, sering tidur pulas dengan dagu bertumpu di atas salju 🐻‍❄️🧊",
+    "triviaType": "fakta"
+  },
+  {
+    "id": "penguin",
+    "name": "Pinguin Kutub",
+    "rarity": "Rare",
+    "image": "penguin.png",
+    "description": "Berdiri kaku di samping iglo dengan topi tidur panjang yang pom-pomnya masuk ke dalam paruhnya sendiri.",
+    "trivia": "Pinguin chinstrap tidur dengan ribuan microsleep sehari, masing-masing cuma sekitar 4 detik, sambil tetap menjaga telurnya 🐧⏱️",
+    "triviaType": "fakta"
+  },
+  {
+    "id": "raccoon",
+    "name": "Rakun Manis",
+    "rarity": "Rare",
+    "image": "raccoon.png",
+    "description": "Kepala nyungsep ke dalam kardus sempit sampai ekornya doang yang nongol, remahan kue pai berserakan di lantai.",
+    "trivia": "Rakun tidur di lubang pohon pada siang hari dan baru aktif menjelajah tempat sampah tetangga saat tengah malam tiba 🦝🌙",
+    "triviaType": "fakta"
+  },
+  {
+    "id": "squirrel",
+    "name": "Tupai Kacang",
+    "rarity": "Rare",
+    "image": "squirrel.png",
+    "description": "Terjepit padat di dalam lubang pohon penuh timbunan kenari, pipinya melar terhimpit kacang dengan ekspresi tidur lebay.",
+    "trivia": "Tupai tidur di sarang ranting bernama drey. Mereka juga jago pura-pura mengubur kacang untuk mengecoh tupai lain yang mau nyolong 🐿️🥜",
+    "triviaType": "fakta"
+  },
+  {
+    "id": "witch-cat",
+    "name": "Kucing Penyihir",
+    "rarity": "Rare",
+    "image": "witch-cat.png",
+    "description": "Tengkurap di atas tumpukan buku mantra, topi penyihir melorot menutup seluruh kepala sampai cuma terlihat ekornya.",
+    "trivia": "Kucing penyihir tidur di atas buku mantra bukan karena rajin belajar, tapi karena kertas kunonya hangat terkena sihir 🧙‍♀️🐱",
+    "triviaType": "jokes"
+  },
+  {
+    "id": "owl",
+    "name": "Burung Hantu Siang",
+    "rarity": "Epic",
+    "image": "owl.png",
+    "description": "Tidur siang terbalik di dahan pohon dengan satu cakar hampir lepas dan masker tidur malam hari dipakai siang bolong.",
+    "trivia": "Burung hantu punya kelopak mata khusus: kelopak atas untuk berkedip, kelopak bawah untuk tidur pulas di siang bolong 🦉💤",
+    "triviaType": "fakta"
+  },
+  {
+    "id": "blue-whale",
+    "name": "Paus Biru Samudra",
+    "rarity": "Epic",
+    "image": "blue-whale.png",
+    "description": "Mengapung vertikal di laut dalam meniup gelembung air liur raksasa bercampur Zzz, topi tidur mini terikat di siripnya.",
+    "trivia": "Paus dan lumba-lumba bisa mengistirahatkan setengah otaknya bergantian, supaya tetap ingat naik ke permukaan untuk bernapas 🐋🌊",
+    "triviaType": "fakta"
+  },
+  {
+    "id": "bat",
+    "name": "Kelelawar Kristal",
+    "rarity": "Epic",
+    "image": "bat.png",
+    "description": "Bergelantungan terbalik di kristal ungu dengan sayap terlilit kusut seperti kepompong selimut darurat dan lidah melet.",
+    "trivia": "Kelelawar tidur terbalik karena cakar khususnya terkunci otomatis tanpa perlu tenaga otot, siap langsung meluncur terbang 🦇🌙",
+    "triviaType": "fakta"
+  },
+  {
+    "id": "octopus",
+    "name": "Gurita Harta Karun",
+    "rarity": "Epic",
+    "image": "octopus.png",
+    "description": "Tidur di peti harta karun terbuka dengan satu tentakel memeluk cangkir emas seperti boneka tidur kesayangan.",
+    "trivia": "Saat gurita tidur, warna kulitnya bisa berubah-ubah sendiri. Ilmuwan menduga fase ini mirip mimpi, mungkin dia lagi mimpi berburu 🐙🎨",
+    "triviaType": "fakta"
+  },
+  {
+    "id": "white-deer",
+    "name": "Rusa Putih Mistis",
+    "rarity": "Epic",
+    "image": "white-deer.png",
+    "description": "Tidur bersila konyol dengan tanduknya tersangkut tanaman rambat bercahaya dan jamur neon tumbuh di hidung tidurnya.",
+    "trivia": "Rusa putih mistis jarang tidur di kasur empuk... takut tanduk bercahayanya nyangkut di kelambu kamar tidur peri 🦌✨",
+    "triviaType": "jokes"
+  },
+  {
+    "id": "t-rex",
+    "name": "T-Rex Si Manja",
+    "rarity": "Legendary",
+    "image": "t-rex.png",
+    "description": "Raja purba telentang pulas dengan tangan mungil kaku memeluk boneka dino mini, mulut menganga dengan liur berkilau emas.",
+    "trivia": "T-Rex tidurnya lama banget... soalnya dia udah punah 66 juta tahun lalu 🏃💨🦖",
+    "triviaType": "jokes"
+  },
+  {
+    "id": "dragon",
+    "name": "Naga Emas Kemilau",
+    "rarity": "Legendary",
+    "image": "dragon.png",
+    "description": "Naga agung melingkar di tumpukan emas tapi kepalanya merosot ke lantai, asap tipis Zzz keluar dari hidung yang kembang-kempis.",
+    "trivia": "Naga emas tidur di atas tumpukan koin emas bukan buat pamer kekayaan, tapi kasur busa biasa langsung gosong kena napas api 🐉🔥",
+    "triviaType": "jokes"
+  },
+  {
+    "id": "phoenix",
+    "name": "Burung Phoenix Abadi",
+    "rarity": "Legendary",
+    "image": "phoenix.png",
+    "description": "Burung api abadi tidur nyungsep di sarang bara hangat seperti ayam kampung kedinginan, paruh mendengkur dengan percikan api.",
+    "trivia": "Burung phoenix kalau tidur pasang alarm keras-keras... takutnya kalau mati suri kebablasan harus lahir ulang dari abu lagi 🐦🔥",
+    "triviaType": "jokes"
+  }
+]
