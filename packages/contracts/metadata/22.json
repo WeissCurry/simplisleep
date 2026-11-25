@@ -1,0 +1,19 @@
+{
+  "name": "Paus Biru Samudra",
+  "description": "Mengapung vertikal di laut dalam meniup gelembung air liur raksasa bercampur Zzz, topi tidur mini terikat di siripnya.",
+  "image": "ipfs://TEST_CID/blue-whale.webp",
+  "attributes": [
+    {
+      "trait_type": "Rarity",
+      "value": "Epic"
+    },
+    {
+      "trait_type": "Set",
+      "value": "Simply is Sleeping"
+    },
+    {
+      "trait_type": "Soulbound",
+      "value": "true"
+    }
+  ]
+}

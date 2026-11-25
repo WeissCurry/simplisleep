@@ -1,0 +1,19 @@
+{
+  "name": "Koala Eukaliptus",
+  "description": "Memeluk batang pohon terlalu kencang sampai pipinya gepeng tertekan, masker tidur melorot sampai ke leher.",
+  "image": "ipfs://TEST_CID/koala.webp",
+  "attributes": [
+    {
+      "trait_type": "Rarity",
+      "value": "Rare"
+    },
+    {
+      "trait_type": "Set",
+      "value": "Simply is Sleeping"
+    },
+    {
+      "trait_type": "Soulbound",
+      "value": "true"
+    }
+  ]
+}

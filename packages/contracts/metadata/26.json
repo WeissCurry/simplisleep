@@ -1,0 +1,19 @@
+{
+  "name": "T-Rex Si Manja",
+  "description": "Raja purba telentang pulas dengan tangan mungil kaku memeluk boneka dino mini, mulut menganga dengan liur berkilau emas.",
+  "image": "ipfs://TEST_CID/t-rex.webp",
+  "attributes": [
+    {
+      "trait_type": "Rarity",
+      "value": "Legendary"
+    },
+    {
+      "trait_type": "Set",
+      "value": "Simply is Sleeping"
+    },
+    {
+      "trait_type": "Soulbound",
+      "value": "true"
+    }
+  ]
+}

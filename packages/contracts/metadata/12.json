@@ -1,0 +1,19 @@
+{
+  "name": "Anak Ayam",
+  "description": "Terjepit terbalik di dalam cangkang telur setengah pecah, hanya kaki kecilnya yang menendang-nendang pelan di udara.",
+  "image": "ipfs://TEST_CID/chick.webp",
+  "attributes": [
+    {
+      "trait_type": "Rarity",
+      "value": "Common"
+    },
+    {
+      "trait_type": "Set",
+      "value": "Simply is Sleeping"
+    },
+    {
+      "trait_type": "Soulbound",
+      "value": "true"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "name": "Rubah Merah",
+  "description": "Tertidur melingkar bagai pretzel rumit, ekor lebatnya ditarik menutupi kepala demi memblokir suara alarm dunia nyata.",
+  "image": "ipfs://TEST_CID/red-fox.webp",
+  "attributes": [
+    {
+      "trait_type": "Rarity",
+      "value": "Rare"
+    },
+    {
+      "trait_type": "Set",
+      "value": "Simply is Sleeping"
+    },
+    {
+      "trait_type": "Soulbound",
+      "value": "true"
+    }
+  ]
+}

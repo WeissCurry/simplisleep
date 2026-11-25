@@ -1,0 +1,19 @@
+{
+  "name": "Gurita Harta Karun",
+  "description": "Tidur di peti harta karun terbuka dengan satu tentakel memeluk cangkir emas seperti boneka tidur kesayangan.",
+  "image": "ipfs://TEST_CID/octopus.webp",
+  "attributes": [
+    {
+      "trait_type": "Rarity",
+      "value": "Epic"
+    },
+    {
+      "trait_type": "Set",
+      "value": "Simply is Sleeping"
+    },
+    {
+      "trait_type": "Soulbound",
+      "value": "true"
+    }
+  ]
+}

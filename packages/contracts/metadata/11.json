@@ -1,0 +1,19 @@
+{
+  "name": "Babi Mini",
+  "description": "Setengah badannya merosot jatuh dari bantal empuk ke lantai, hidung peseknya mendengkur keras bikin lantai bergetar.",
+  "image": "ipfs://TEST_CID/mini-pig.webp",
+  "attributes": [
+    {
+      "trait_type": "Rarity",
+      "value": "Common"
+    },
+    {
+      "trait_type": "Set",
+      "value": "Simply is Sleeping"
+    },
+    {
+      "trait_type": "Soulbound",
+      "value": "true"
+    }
+  ]
+}

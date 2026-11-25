@@ -1,0 +1,19 @@
+{
+  "name": "Kucing Penyihir",
+  "description": "Tengkurap di atas tumpukan buku mantra, topi penyihir melorot menutup seluruh kepala sampai cuma terlihat ekornya.",
+  "image": "ipfs://TEST_CID/witch-cat.webp",
+  "attributes": [
+    {
+      "trait_type": "Rarity",
+      "value": "Rare"
+    },
+    {
+      "trait_type": "Set",
+      "value": "Simply is Sleeping"
+    },
+    {
+      "trait_type": "Soulbound",
+      "value": "true"
+    }
+  ]
+}

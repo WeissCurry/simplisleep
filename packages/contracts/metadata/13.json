@@ -1,0 +1,19 @@
+{
+  "name": "Panda Rebah",
+  "description": "Merosot di batang bambu sampai dagunya nempel ke perut buncit, tunas bambu masih menggantung di mulut terbukanya.",
+  "image": "ipfs://TEST_CID/panda.webp",
+  "attributes": [
+    {
+      "trait_type": "Rarity",
+      "value": "Rare"
+    },
+    {
+      "trait_type": "Set",
+      "value": "Simply is Sleeping"
+    },
+    {
+      "trait_type": "Soulbound",
+      "value": "true"
+    }
+  ]
+}

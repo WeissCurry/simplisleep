@@ -1,0 +1,19 @@
+{
+  "name": "Kungkang Santai",
+  "description": "Tidur bergelantungan satu cakar hampir lepas dengan topi tidur melorot menutupi seluruh matanya.",
+  "image": "ipfs://TEST_CID/sloth.webp",
+  "attributes": [
+    {
+      "trait_type": "Rarity",
+      "value": "Common"
+    },
+    {
+      "trait_type": "Set",
+      "value": "Simply is Sleeping"
+    },
+    {
+      "trait_type": "Soulbound",
+      "value": "true"
+    }
+  ]
+}

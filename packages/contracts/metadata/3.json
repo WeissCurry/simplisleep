@@ -1,0 +1,19 @@
+{
+  "name": "Anjing Corgi",
+  "description": "Telentang pasrah dengan empat kaki pendek kaku menghadap langit-langit dan lidah menjulur keluar menyamping.",
+  "image": "ipfs://TEST_CID/corgi.webp",
+  "attributes": [
+    {
+      "trait_type": "Rarity",
+      "value": "Common"
+    },
+    {
+      "trait_type": "Set",
+      "value": "Simply is Sleeping"
+    },
+    {
+      "trait_type": "Soulbound",
+      "value": "true"
+    }
+  ]
+}

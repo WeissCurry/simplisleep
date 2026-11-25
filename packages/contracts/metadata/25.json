@@ -1,0 +1,19 @@
+{
+  "name": "Rusa Putih Mistis",
+  "description": "Tidur bersila konyol dengan tanduknya tersangkut tanaman rambat bercahaya dan jamur neon tumbuh di hidung tidurnya.",
+  "image": "ipfs://TEST_CID/white-deer.webp",
+  "attributes": [
+    {
+      "trait_type": "Rarity",
+      "value": "Epic"
+    },
+    {
+      "trait_type": "Set",
+      "value": "Simply is Sleeping"
+    },
+    {
+      "trait_type": "Soulbound",
+      "value": "true"
+    }
+  ]
+}

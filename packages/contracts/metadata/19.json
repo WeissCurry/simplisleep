@@ -1,0 +1,19 @@
+{
+  "name": "Tupai Kacang",
+  "description": "Terjepit padat di dalam lubang pohon penuh timbunan kenari, pipinya melar terhimpit kacang dengan ekspresi tidur lebay.",
+  "image": "ipfs://TEST_CID/squirrel.webp",
+  "attributes": [
+    {
+      "trait_type": "Rarity",
+      "value": "Rare"
+    },
+    {
+      "trait_type": "Set",
+      "value": "Simply is Sleeping"
+    },
+    {
+      "trait_type": "Soulbound",
+      "value": "true"
+    }
+  ]
+}

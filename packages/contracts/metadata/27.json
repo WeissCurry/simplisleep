@@ -1,0 +1,19 @@
+{
+  "name": "Naga Emas Kemilau",
+  "description": "Naga agung melingkar di tumpukan emas tapi kepalanya merosot ke lantai, asap tipis Zzz keluar dari hidung yang kembang-kempis.",
+  "image": "ipfs://TEST_CID/dragon.webp",
+  "attributes": [
+    {
+      "trait_type": "Rarity",
+      "value": "Legendary"
+    },
+    {
+      "trait_type": "Set",
+      "value": "Simply is Sleeping"
+    },
+    {
+      "trait_type": "Soulbound",
+      "value": "true"
+    }
+  ]
+}

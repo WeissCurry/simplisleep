@@ -1,0 +1,19 @@
+{
+  "name": "Landak Mini",
+  "description": "Tidur telentang di atas daun kering dengan bantal mini kebesaran menimpa dahinya sambil mendengkur halus.",
+  "image": "ipfs://TEST_CID/hedgehog.webp",
+  "attributes": [
+    {
+      "trait_type": "Rarity",
+      "value": "Common"
+    },
+    {
+      "trait_type": "Set",
+      "value": "Simply is Sleeping"
+    },
+    {
+      "trait_type": "Soulbound",
+      "value": "true"
+    }
+  ]
+}

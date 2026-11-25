@@ -1,0 +1,19 @@
+{
+  "name": "Burung Phoenix Abadi",
+  "description": "Burung api abadi tidur nyungsep di sarang bara hangat seperti ayam kampung kedinginan, paruh mendengkur dengan percikan api.",
+  "image": "ipfs://TEST_CID/phoenix.webp",
+  "attributes": [
+    {
+      "trait_type": "Rarity",
+      "value": "Legendary"
+    },
+    {
+      "trait_type": "Set",
+      "value": "Simply is Sleeping"
+    },
+    {
+      "trait_type": "Soulbound",
+      "value": "true"
+    }
+  ]
+}

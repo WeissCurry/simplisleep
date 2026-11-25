@@ -1,0 +1,19 @@
+{
+  "name": "Burung Hantu Siang",
+  "description": "Tidur siang terbalik di dahan pohon dengan satu cakar hampir lepas dan masker tidur malam hari dipakai siang bolong.",
+  "image": "ipfs://TEST_CID/owl.webp",
+  "attributes": [
+    {
+      "trait_type": "Rarity",
+      "value": "Epic"
+    },
+    {
+      "trait_type": "Set",
+      "value": "Simply is Sleeping"
+    },
+    {
+      "trait_type": "Soulbound",
+      "value": "true"
+    }
+  ]
+}

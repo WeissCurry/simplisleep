@@ -1,0 +1,19 @@
+{
+  "name": "Pinguin Kutub",
+  "description": "Berdiri kaku di samping iglo dengan topi tidur panjang yang pom-pomnya masuk ke dalam paruhnya sendiri.",
+  "image": "ipfs://TEST_CID/penguin.webp",
+  "attributes": [
+    {
+      "trait_type": "Rarity",
+      "value": "Rare"
+    },
+    {
+      "trait_type": "Set",
+      "value": "Simply is Sleeping"
+    },
+    {
+      "trait_type": "Soulbound",
+      "value": "true"
+    }
+  ]
+}

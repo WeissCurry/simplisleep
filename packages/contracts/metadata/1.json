@@ -1,0 +1,19 @@
+{
+  "name": "Kucing Oren",
+  "description": "Meringkuk bulat seperti donat kayu manis dengan gelembung ingus raksasa kembang-kempis dan air liur menetes ke lantai.",
+  "image": "ipfs://TEST_CID/orange-cat.webp",
+  "attributes": [
+    {
+      "trait_type": "Rarity",
+      "value": "Common"
+    },
+    {
+      "trait_type": "Set",
+      "value": "Simply is Sleeping"
+    },
+    {
+      "trait_type": "Soulbound",
+      "value": "true"
+    }
+  ]
+}

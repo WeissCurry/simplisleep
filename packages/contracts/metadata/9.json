@@ -1,0 +1,19 @@
+{
+  "name": "Panda Merah",
+  "description": "Tengkurap memeluk erat ekor belangnya sendiri yang ditarik sampai menutupi seluruh tubuhnya seperti selimut tebal.",
+  "image": "ipfs://TEST_CID/red-panda.webp",
+  "attributes": [
+    {
+      "trait_type": "Rarity",
+      "value": "Common"
+    },
+    {
+      "trait_type": "Set",
+      "value": "Simply is Sleeping"
+    },
+    {
+      "trait_type": "Soulbound",
+      "value": "true"
+    }
+  ]
+}

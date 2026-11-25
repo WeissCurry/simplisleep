@@ -1,0 +1,19 @@
+{
+  "name": "Kelinci Putih",
+  "description": "Telungkup gepeng bagai adonan pancake gagal dengan telinga panjang kusut menutupi seluruh wajahnya.",
+  "image": "ipfs://TEST_CID/white-rabbit.webp",
+  "attributes": [
+    {
+      "trait_type": "Rarity",
+      "value": "Common"
+    },
+    {
+      "trait_type": "Set",
+      "value": "Simply is Sleeping"
+    },
+    {
+      "trait_type": "Soulbound",
+      "value": "true"
+    }
+  ]
+}

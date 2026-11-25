@@ -1,0 +1,19 @@
+{
+  "name": "Beruang Kutub",
+  "description": "Tidur telentang di bongkahan es mini sampai kakinya menggantung di air, syal merah melilit kepala seperti serban tidur.",
+  "image": "ipfs://TEST_CID/polar-bear.webp",
+  "attributes": [
+    {
+      "trait_type": "Rarity",
+      "value": "Rare"
+    },
+    {
+      "trait_type": "Set",
+      "value": "Simply is Sleeping"
+    },
+    {
+      "trait_type": "Soulbound",
+      "value": "true"
+    }
+  ]
+}

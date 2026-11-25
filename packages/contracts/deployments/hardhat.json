@@ -1,0 +1,12 @@
+{
+  "network": "hardhat",
+  "chainId": 31337,
+  "deployer": "0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266",
+  "SleepCards": "0x5fbdb2315678afecb367f032d93f642f64180aa3",
+  "LeaderboardCommit": "0xe7f1725e7734ce288f8367e1bb143e90bb3f0512",
+  "contracts": {
+    "SleepCards": "0x5fbdb2315678afecb367f032d93f642f64180aa3",
+    "LeaderboardCommit": "0xe7f1725e7734ce288f8367e1bb143e90bb3f0512"
+  },
+  "deployedAt": "2026-11-20T18:32:49.647Z"
+}

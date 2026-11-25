@@ -1,0 +1,19 @@
+{
+  "name": "Hamster Kenyang",
+  "description": "Kepala nyungsep ke dasar mangkuk biji bunga matahari, menyisakan pantat bulat dan kaki kecil mencuat ke atas.",
+  "image": "ipfs://TEST_CID/hamster.webp",
+  "attributes": [
+    {
+      "trait_type": "Rarity",
+      "value": "Common"
+    },
+    {
+      "trait_type": "Set",
+      "value": "Simply is Sleeping"
+    },
+    {
+      "trait_type": "Soulbound",
+      "value": "true"
+    }
+  ]
+}

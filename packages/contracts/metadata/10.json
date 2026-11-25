@@ -1,0 +1,19 @@
+{
+  "name": "Berang-berang Apung",
+  "description": "Mengapung telentang memeluk bantal donat mini dengan mulut menganga lebar meneteskan liur ke air.",
+  "image": "ipfs://TEST_CID/otter.webp",
+  "attributes": [
+    {
+      "trait_type": "Rarity",
+      "value": "Common"
+    },
+    {
+      "trait_type": "Set",
+      "value": "Simply is Sleeping"
+    },
+    {
+      "trait_type": "Soulbound",
+      "value": "true"
+    }
+  ]
+}

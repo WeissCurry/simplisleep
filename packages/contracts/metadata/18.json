@@ -1,0 +1,19 @@
+{
+  "name": "Rakun Manis",
+  "description": "Kepala nyungsep ke dalam kardus sempit sampai ekornya doang yang nongol, remahan kue pai berserakan di lantai.",
+  "image": "ipfs://TEST_CID/raccoon.webp",
+  "attributes": [
+    {
+      "trait_type": "Rarity",
+      "value": "Rare"
+    },
+    {
+      "trait_type": "Set",
+      "value": "Simply is Sleeping"
+    },
+    {
+      "trait_type": "Soulbound",
+      "value": "true"
+    }
+  ]
+}

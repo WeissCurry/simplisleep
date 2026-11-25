@@ -1,0 +1,19 @@
+{
+  "name": "Bebek Kuning",
+  "description": "Berdiri oleng satu kaki nyaris tumbang, kepalanya diselipkan terbalik di bawah sayap bersama gelembung tidur besar.",
+  "image": "ipfs://TEST_CID/yellow-duck.webp",
+  "attributes": [
+    {
+      "trait_type": "Rarity",
+      "value": "Common"
+    },
+    {
+      "trait_type": "Set",
+      "value": "Simply is Sleeping"
+    },
+    {
+      "trait_type": "Soulbound",
+      "value": "true"
+    }
+  ]
+}

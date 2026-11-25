@@ -1,0 +1,19 @@
+{
+  "name": "Kapibara Santuy",
+  "description": "Duduk kaku dengan ekspresi pasrah tanpa jiwa, sebutir jeruk di atas kepala dan satu lagi di ujung hidungnya.",
+  "image": "ipfs://TEST_CID/capybara.webp",
+  "attributes": [
+    {
+      "trait_type": "Rarity",
+      "value": "Common"
+    },
+    {
+      "trait_type": "Set",
+      "value": "Simply is Sleeping"
+    },
+    {
+      "trait_type": "Soulbound",
+      "value": "true"
+    }
+  ]
+}

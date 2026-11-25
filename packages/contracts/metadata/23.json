@@ -1,0 +1,19 @@
+{
+  "name": "Kelelawar Kristal",
+  "description": "Bergelantungan terbalik di kristal ungu dengan sayap terlilit kusut seperti kepompong selimut darurat dan lidah melet.",
+  "image": "ipfs://TEST_CID/bat.webp",
+  "attributes": [
+    {
+      "trait_type": "Rarity",
+      "value": "Epic"
+    },
+    {
+      "trait_type": "Set",
+      "value": "Simply is Sleeping"
+    },
+    {
+      "trait_type": "Soulbound",
+      "value": "true"
+    }
+  ]
+}
