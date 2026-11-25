@@ -120,7 +120,7 @@ Aplikasi web dapat di-build sebagai SPA statis murni yang menggunakan data mock 
 # Build distribusi demo statis
 pnpm build:demo
 ```
-Hasil build berada di `apps/web/dist/web/browser`. Direktori ini sudah menyertakan file rewrite SPA `apps/web/public/_redirects` (`/* /index.html 200`) untuk deployment langsung ke Netlify, Cloudflare Pages, atau platform static hosting lainnya.
+Hasil build berada di `apps/web/dist/web/browser`. Konfigurasi rewrite SPA dan proxy API untuk Netlify telah disediakan terpusat pada file `netlify.toml` di root repositori.
 
 ---
 
@@ -185,7 +185,7 @@ Variabel lingkungan dibaca dari root `.env` atau environment server. Tabel berik
 ## Deployment Production
 
 ### 1. Arsitektur Hosting yang Disarankan
-- **Frontend Web**: Static Hosting (Netlify, Vercel, Cloudflare Pages). File routing SPA telah disediakan via `apps/web/public/_redirects`.
+- **Frontend Web**: Static Hosting (Netlify, Vercel, Cloudflare Pages). Konfigurasi build, headers keamanan, proxy reverse ke API (`/api/*`), dan routing SPA telah disediakan terpusat via `netlify.toml` di root repo.
 - **Backend API**: Server Container / VPS dengan Persistent Volume (Railway, Fly.io, Render, atau VPS Ubuntu):
   - Modul bawaan `node:sqlite` membutuhkan Node.js runtime `>= 22.5.0`.
   - SQLite berjalan dalam mode WAL (`simplisleep.db`, `simplisleep.db-wal`, `simplisleep.db-shm`). Arahkan variabel `DB_PATH` ke direktori volume persisten (contoh: `/data/simplisleep.db`) agar data tidak hilang saat restart kontainer.

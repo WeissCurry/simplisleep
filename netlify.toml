@@ -1,0 +1,75 @@
+# Netlify configuration for SimpliSleep Angular Web App (pnpm monorepo)
+
+[build]
+  base = ""
+  command = "corepack enable && pnpm install --frozen-lockfile && pnpm --filter shared build && pnpm --filter web exec ng build"
+  publish = "apps/web/dist/web/browser"
+
+[build.environment]
+  NODE_VERSION = "22.12"
+  PNPM_VERSION = "9.15.4"
+
+# ==============================================================================
+# REDIRECTS
+# ==============================================================================
+
+# 1. API Reverse Proxy ke backend server (Railway / Container VPS)
+# TODO: Ganti https://REPLACE-WITH-RAILWAY-URL dengan URL domain backend Railway Anda
+# (contoh: https://simplisleep-api-production.up.railway.app)
+[[redirects]]
+  from = "/api/*"
+  to = "https://REPLACE-WITH-RAILWAY-URL/api/:splat"
+  status = 200
+  force = true
+
+# 2. Fallback routing SPA Angular
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# ==============================================================================
+# HEADERS
+# ==============================================================================
+
+# Global security headers
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+# Cache panjang untuk aset ter-hash Angular (*.js, *.css)
+[[headers]]
+  for = "/*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.css"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Cache pendek / no-cache untuk index.html agar rilis baru langsung terbaca peramban
+[[headers]]
+  for = "/index.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+# ==============================================================================
+# OPSIONAL: DEPLOY VERSI DEMO MOCK (TANPA BACKEND)
+# ==============================================================================
+# Jika ingin mendeploy versi Demo Statis murni (semua data mock berjalan lokal di browser,
+# tanpa memerlukan backend API/Railway):
+#
+# 1. Ubah command di atas menjadi:
+#      command = "corepack enable && pnpm install --frozen-lockfile && pnpm --filter shared build && pnpm --filter web exec ng build --configuration demo"
+#    atau gunakan script root:
+#      command = "corepack enable && pnpm install --frozen-lockfile && pnpm build:demo"
+#
+# 2. Proxy API (/api/*) di atas dapat dinonaktifkan/dihapus karena seluruh request memakai data mock.
+#
+# 3. Atau gunakan Netlify deploy context (misal branch demo):
+# [context.demo]
+#   command = "corepack enable && pnpm install --frozen-lockfile && pnpm build:demo"
