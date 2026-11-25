@@ -1,0 +1,66 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+dist/
+build/
+.angular/
+.turbo/
+out-tsc/
+*.tsbuildinfo
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Database
+*.sqlite
+*.sqlite-journal
+*.sqlite-wal
+*.sqlite-shm
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+*.db.bak
+
+# Private Keys & Keystores
+*.pem
+*.key
+*.keystore
+
+# Hardhat & Smart Contracts
+artifacts/
+cache/
+typechain/
+typechain-types/
+
+# Testing, Coverage & Screenshots
+coverage/
+*.lcov
+__screenshots__/
+*.tmp
+tmp/
+
+# Logs
+*.log
+
+# IDE & OS
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+*.bak
+
+# Internal docs (kompetisi/pitching, tidak dipublikasikan)
+docs/PITCH.md
+docs/JUDGE_GUIDE.md
+docs/DEMO_SCRIPT.md
+AI_LOG.md
+SPEC.md
+
+# Internal aset (Master art lama, tidak dipakai kode)
+assets/cards/_old/
