@@ -176,13 +176,18 @@ Variabel lingkungan dibaca dari root `.env` atau environment server. Tabel berik
 > **Konfigurasi Google Sign-In**:
 > - Client ID yang sama (`GOOGLE_CLIENT_ID`) diisi pada `googleClientId` di `apps/web/src/environments/environment.ts` dan `apps/web/src/environments/environment.development.ts`.
 > - Untuk dev lokal, `GOOGLE_CLIENT_ID` dibaca dari file `.env` di root repo (dimuat otomatis oleh API via `--env-file-if-exists`).
-> - Authorized JavaScript origins di Google Cloud Console harus mencakup `http://localhost:4200` DAN `http://localhost` (Google Identity Services membutuhkan keduanya untuk origin check), serta domain web production tanpa trailing slash (contoh: `https://simplisleep.app`).
+> - Authorized JavaScript origins di Google Cloud Console harus mencakup `http://localhost:4200` DAN `http://localhost` (Google Identity Services membutuhkan keduanya untuk origin check), serta domain web production tanpa trailing slash (contoh: `https://simplisleep.netlify.app`).
 > - Perubahan origin di Google Cloud Console membutuhkan waktu beberapa menit untuk terpropagasi.
 > - Bila `googleClientId` kosong atau `useMock: true`, tombol "Masuk Google" akan otomatis berstatus disabled dengan keterangan "Login Google belum dikonfigurasi" tanpa memicu error console.
 
 ---
 
 ## Deployment Production
+
+### Tautan Live Deployment
+- **Frontend Web (Netlify)**: [https://simplisleep.netlify.app](https://simplisleep.netlify.app)
+- **Backend API (VPS Ubuntu)**: [https://api-simplisleep.skyshareacademy.id](https://api-simplisleep.skyshareacademy.id)
+- **Endpoint Health Check**: [https://api-simplisleep.skyshareacademy.id/api/health](https://api-simplisleep.skyshareacademy.id/api/health)
 
 ### 1. Arsitektur Hosting yang Disarankan
 - **Frontend Web**: Static Hosting (Netlify, Vercel, Cloudflare Pages). Konfigurasi build monorepo (`base = "apps/web"`, `publish = "dist/web/browser"` yang kompatibel dengan plugin `@netlify/angular-runtime`), headers keamanan, proxy reverse ke API (`/api/*`), dan routing SPA telah disediakan terpusat via `netlify.toml` di root repo.
@@ -236,7 +241,7 @@ SimpliSleep menyertakan konfigurasi `Dockerfile` dan `railway.json` di root repo
      - `JWT_SECRET=<secret acak 64 karakter>`
      - `WALLET_ENC_KEY=<secret acak 64 karakter>`
      - `ADMIN_TOKEN=<token rahasia admin>`
-     - `WEB_ORIGIN=https://<nama-app>.netlify.app`
+     - `WEB_ORIGIN=https://simplisleep.netlify.app`
      - `ENABLE_DEMO_LOGIN=true`
      - Variabel Google Auth & Sepolia jika sudah disiapkan.
 5. **Generate Domain**:
@@ -253,35 +258,84 @@ SimpliSleep menyertakan konfigurasi `Dockerfile` dan `railway.json` di root repo
        force = true
      ```
 
-### 5. Deploy API ke VPS (bundle)
-Untuk lingkungan VPS berspesifikasi rendah (misalnya RAM 1GB yang terbatas), SimpliSleep menyediakan mekanisme bundling mandiri menjadi satu file executable ESM (`index.mjs`, ~2.4 MB) sehingga server VPS tidak perlu menjalankan `pnpm install` atau menyimpan `node_modules`:
+### 5. Panduan Deployment API ke VPS (Production yang Digunakan)
+Arsitektur API live SimpliSleep saat ini berjalan di **VPS Ubuntu** menggunakan proses manager **PM2**, reverse proxy **Nginx**, dan sertifikat SSL **Certbot** via branch mandiri **`deploy-api`**:
 
-1. **Build Bundle Mandiri Secara Lokal**:
+1. **Build Bundle Mandiri Secara Lokal & Push ke Branch `deploy-api`**:
+   Untuk efisiensi memori (VPS RAM 1GB), API dibuild menjadi satu file executable ESM (`index.mjs`, ~2.4 MB) sehingga VPS tidak membutuhkan instalasi dependensi `node_modules` atau `pnpm`:
    ```bash
+   # Build bundle mandiri lokal (mengompilasi shared, bundle api via esbuild, salin aset runtime)
    pnpm bundle:api
+
+   # Hasil bundle berada di direktori deploy/api/ dan dipush ke branch khusus: deploy-api
    ```
-   Perintah ini akan:
-   - Mengompilasi paket `shared`.
-   - Mem-bundle backend API menjadi satu file `deploy/api/index.mjs` menggunakan esbuild (`--platform=node --target=node22 --format=esm --external:node:*`).
-   - Menyalin aset runtime (`assets/cards/*.json` dan ABI contracts).
-   - Menyiapkan `package.json` minimal (`type: module`) dan konfigurasi PM2 `ecosystem.config.cjs`.
 
-2. **Deploy ke VPS**:
-   - Salin isi folder `deploy/api` ke direktori VPS tujuan (atau gunakan branch `deploy-api` yang khusus berisi bundle ini).
-   - Buat file `.env` di direktori tersebut berisi konfigurasi produksi (salin dari `.env.production`).
+2. **Clone Branch `deploy-api` di VPS**:
+   ```bash
+   git clone -b deploy-api https://github.com/WeissCurry/simplisleep.git simplisleep-api
+   cd simplisleep-api
+   ```
 
-3. **Menjalankan Server**:
-   - **Langsung dengan Node.js (>= 22.5 / 22.12)**:
-     ```bash
-     node --env-file=.env --experimental-sqlite --max-old-space-size=128 index.mjs
-     ```
-     *(Catatan: flag `--experimental-sqlite` dibutuhkan pada Node.js 22.5–22.12 dan aman diabaikan/diterima tanpa peringatan pada Node >=22.13).*
-   - **Dengan Process Manager (PM2)**:
-     ```bash
-     pm2 start ecosystem.config.cjs
-     pm2 save
-     ```
-     Konfigurasi `ecosystem.config.cjs` telah menyertakan `node_args: '--env-file=.env --experimental-sqlite --max-old-space-size=128'`, `APP_ROOT=.`, dan batas restart memori `200M`.
+3. **Konfigurasi Environment `.env`**:
+   Buat file `.env` di direktori `simplisleep-api` (jangan pernah commit file ini ke repositori):
+   ```bash
+   NODE_ENV=production
+   PORT=3100
+   DB_PATH=/var/data/simplisleep.db
+   AUTO_SEED=true
+   TRUST_PROXY=true
+   WEB_ORIGIN=https://simplisleep.netlify.app
+   ENABLE_DEMO_LOGIN=true
+   # Sertakan JWT_SECRET, WALLET_ENC_KEY, ADMIN_TOKEN, Google Auth, dan konfigurasi Sepolia
+   ```
+
+4. **Jalankan API dengan PM2 (`--experimental-sqlite`)**:
+   Server dijalankan menggunakan PM2 melalui konfigurasi `ecosystem.config.cjs`:
+   ```bash
+   pm2 start ecosystem.config.cjs
+   pm2 save
+   pm2 startup
+   ```
+   *Catatan*: File `ecosystem.config.cjs` menyertakan argumen:
+   `node_args: '--env-file=.env --experimental-sqlite --max-old-space-size=128'`. Flag `--experimental-sqlite` krusial untuk mengaktifkan modul native `node:sqlite` pada Node.js 22.12 / 22.x LTS.
+
+5. **Konfigurasi Reverse Proxy Nginx**:
+   Buat konfigurasi virtual host Nginx (misal `/etc/nginx/sites-available/api-simplisleep.skyshareacademy.id`):
+   ```nginx
+   server {
+       server_name api-simplisleep.skyshareacademy.id;
+
+       location / {
+           proxy_pass http://127.0.0.1:3100;
+           proxy_http_version 1.1;
+           proxy_set_header Upgrade $http_upgrade;
+           proxy_set_header Connection 'upgrade';
+           proxy_set_header Host $host;
+           proxy_set_header X-Real-IP $remote_addr;
+           proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+           proxy_set_header X-Forwarded-Proto $scheme;
+           proxy_cache_bypass $http_upgrade;
+       }
+   }
+   ```
+   Aktifkan konfigurasi dan reload service Nginx:
+   ```bash
+   sudo ln -s /etc/nginx/sites-available/api-simplisleep.skyshareacademy.id /etc/nginx/sites-enabled/
+   sudo nginx -t && sudo systemctl reload nginx
+   ```
+
+6. **Amankan dengan HTTPS via Certbot**:
+   Pasang dan aktifkan sertifikat SSL/TLS gratis Let's Encrypt secara otomatis:
+   ```bash
+   sudo certbot --nginx -d api-simplisleep.skyshareacademy.id
+   ```
+
+7. **Verifikasi Deployment Live**:
+   ```bash
+   curl -s https://api-simplisleep.skyshareacademy.id/api/health
+   # Respons yang diharapkan:
+   # {"status":"ok","service":"simplisleep-api","time":"...","sqlite":true}
+   ```
 
 ---
 
