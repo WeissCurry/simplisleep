@@ -3,7 +3,7 @@ module.exports = {
     {
       name: 'simplisleep-api',
       script: 'index.mjs',
-      node_args: '--env-file=.env',
+      node_args: '--env-file=.env --experimental-sqlite --max-old-space-size=128',
       env: {
         APP_ROOT: '.'
       },
