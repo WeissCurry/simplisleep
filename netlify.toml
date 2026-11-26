@@ -2,8 +2,7 @@
 
 [build]
   base = "apps/web"
-  # SEMENTARA: build demo. Setelah API Railway live, hapus --configuration demo dan isi URL proxy /api.
-  command = "cd ../.. && corepack enable && pnpm install --frozen-lockfile && pnpm --filter shared build && pnpm --filter web exec ng build --configuration demo"
+  command = "cd ../.. && corepack enable && pnpm install --frozen-lockfile && pnpm --filter shared build && pnpm --filter web exec ng build"
   publish = "dist/web/browser"
 
 [build.environment]
@@ -14,12 +13,10 @@
 # REDIRECTS
 # ==============================================================================
 
-# 1. API Reverse Proxy ke backend server (Railway / Container VPS)
-# TODO: Ganti https://REPLACE-WITH-RAILWAY-URL dengan URL domain backend Railway Anda
-# (contoh: https://simplisleep-api-production.up.railway.app)
+# 1. API Reverse Proxy ke backend server VPS
 [[redirects]]
   from = "/api/*"
-  to = "https://REPLACE-WITH-RAILWAY-URL/api/:splat"
+  to = "https://api-simplisleep.skyshareacademy.id/api/:splat"
   status = 200
   force = true
 
