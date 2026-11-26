@@ -273,14 +273,15 @@ Untuk lingkungan VPS berspesifikasi rendah (misalnya RAM 1GB yang terbatas), Sim
 3. **Menjalankan Server**:
    - **Langsung dengan Node.js (>= 22.5 / 22.12)**:
      ```bash
-     node --env-file=.env index.mjs
+     node --env-file=.env --experimental-sqlite --max-old-space-size=128 index.mjs
      ```
+     *(Catatan: flag `--experimental-sqlite` dibutuhkan pada Node.js 22.5–22.12 dan aman diabaikan/diterima tanpa peringatan pada Node >=22.13).*
    - **Dengan Process Manager (PM2)**:
      ```bash
      pm2 start ecosystem.config.cjs
      pm2 save
      ```
-     Konfigurasi `ecosystem.config.cjs` telah memuat `--env-file=.env`, `APP_ROOT=.`, dan batas restart memori `200M`.
+     Konfigurasi `ecosystem.config.cjs` telah menyertakan `node_args: '--env-file=.env --experimental-sqlite --max-old-space-size=128'`, `APP_ROOT=.`, dan batas restart memori `200M`.
 
 ---
 
