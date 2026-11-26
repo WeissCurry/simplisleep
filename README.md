@@ -1,6 +1,6 @@
 # SimpliSleeps
 
-> **Catatan Merek**: Nama tampilan resmi aplikasi adalah **SimpliSleeps**. Nama repositori, direktori proyek, dan subdomain web/API tetap menggunakan `simplisleep` (mis. `simplisleep.netlify.app`).
+> **Catatan Merek**: Nama tampilan resmi aplikasi adalah **SimpliSleeps**. Nama repositori, direktori proyek, dan subdomain API tetap menggunakan `simplisleep` (mis. `api-simplisleep.skyshareacademy.id`), sedangkan domain web resmi beralih ke `simplisleeps.netlify.app`.
 
 SimpliSleeps adalah platform gamifikasi kebiasaan tidur sehat untuk karyawan SimpliDOTS (SimpliMates). Aplikasi ini memadukan algoritma skor tidur berbasis durasi dan konsistensi, kartu koleksi digital Soulbound NFT (ERC-5192) di jaringan Ethereum Sepolia, dan bukti integritas klasemen mingguan on-chain tanpa mengekspos data privat jam tidur.
 
@@ -159,7 +159,7 @@ Variabel lingkungan dibaca dari root `.env` atau environment server. Tabel berik
 | `JWT_SECRET` | Wajib | Kunci penandatanganan token otentikasi JWT (HS256). | Dibuat dengan `openssl rand -hex 32`. |
 | `WALLET_ENC_KEY` | Wajib | Kunci enkripsi AES-256-GCM untuk custodial wallet pengguna. | Dibuat dengan `openssl rand -hex 32`. Wajib disimpan permanen agar wallet tidak terkunci. |
 | `GOOGLE_CLIENT_ID` | Wajib* | Client ID OAuth 2.0 untuk Google Sign-In produksi (*Wajib jika menggunakan Google Auth). Nilai yang sama wajib diisi pada `googleClientId` di `apps/web/src/environments/environment.ts`. | Diambil dari Google Cloud Console pada menu APIs & Services > Credentials. Origin (*Authorized JavaScript origins*) harus sama persis dengan domain web. |
-| `WEB_ORIGIN` | Wajib* | Domain frontend yang diizinkan CORS (*Wajib jika API dan web berbeda domain). Mendukung daftar domain dipisah koma. | URL domain web production (contoh: `https://simplisleep.netlify.app,http://localhost:4200`). |
+| `WEB_ORIGIN` | Wajib* | Domain frontend yang diizinkan CORS (*Wajib jika API dan web berbeda domain). Mendukung daftar domain dipisah koma. | URL domain web production (contoh: `https://simplisleeps.netlify.app,http://localhost:4200`). |
 | `TRUST_PROXY` | Opsional | Mempercayai header `X-Forwarded-For` untuk rate limiter saat di belakang reverse proxy PaaS (`true`/`false`). | Diset `true` bila hosting di Railway, Fly.io, Cloudflare, atau Nginx. |
 | `AUTO_SEED` | Opsional | Mengizinkan auto-seed data demo saat tabel users kosong di production (`true`/`false`). Default di prod: nonaktif. | Diset `true` pada hosting jika database baru ingin otomatis diisi data demo Simplimates. |
 | `ADMIN_TOKEN` | Wajib | Token rahasia otentikasi endpoint `POST /api/admin/close-week`. | Dibuat acak dengan `openssl rand -hex 24`. |
@@ -178,7 +178,7 @@ Variabel lingkungan dibaca dari root `.env` atau environment server. Tabel berik
 > **Konfigurasi Google Sign-In**:
 > - Client ID yang sama (`GOOGLE_CLIENT_ID`) diisi pada `googleClientId` di `apps/web/src/environments/environment.ts` dan `apps/web/src/environments/environment.development.ts`.
 > - Untuk dev lokal, `GOOGLE_CLIENT_ID` dibaca dari file `.env` di root repo (dimuat otomatis oleh API via `--env-file-if-exists`).
-> - Authorized JavaScript origins di Google Cloud Console harus mencakup `http://localhost:4200` DAN `http://localhost` (Google Identity Services membutuhkan keduanya untuk origin check), serta domain web production tanpa trailing slash (contoh: `https://simplisleep.netlify.app`).
+> - Authorized JavaScript origins di Google Cloud Console harus mencakup `http://localhost:4200` DAN `http://localhost` (Google Identity Services membutuhkan keduanya untuk origin check), serta domain web production tanpa trailing slash (contoh: `https://simplisleeps.netlify.app`).
 > - Perubahan origin di Google Cloud Console membutuhkan waktu beberapa menit untuk terpropagasi.
 > - Bila `googleClientId` kosong atau `useMock: true`, tombol "Masuk Google" akan otomatis berstatus disabled dengan keterangan "Login Google belum dikonfigurasi" tanpa memicu error console.
 
@@ -187,7 +187,7 @@ Variabel lingkungan dibaca dari root `.env` atau environment server. Tabel berik
 ## Deployment Production
 
 ### Tautan Live Deployment
-- **Frontend Web (Netlify)**: [https://simplisleep.netlify.app](https://simplisleep.netlify.app)
+- **Frontend Web (Netlify)**: [https://simplisleeps.netlify.app](https://simplisleeps.netlify.app)
 - **Backend API (VPS Ubuntu)**: [https://api-simplisleep.skyshareacademy.id](https://api-simplisleep.skyshareacademy.id)
 - **Endpoint Health Check**: [https://api-simplisleep.skyshareacademy.id/api/health](https://api-simplisleep.skyshareacademy.id/api/health)
 
@@ -243,7 +243,7 @@ SimpliSleeps menyertakan konfigurasi `Dockerfile` dan `railway.json` di root rep
      - `JWT_SECRET=<secret acak 64 karakter>`
      - `WALLET_ENC_KEY=<secret acak 64 karakter>`
      - `ADMIN_TOKEN=<token rahasia admin>`
-     - `WEB_ORIGIN=https://simplisleep.netlify.app`
+     - `WEB_ORIGIN=https://simplisleeps.netlify.app`
      - `ENABLE_DEMO_LOGIN=true`
      - Variabel Google Auth & Sepolia jika sudah disiapkan.
 5. **Generate Domain**:
@@ -286,7 +286,7 @@ Arsitektur API live SimpliSleeps saat ini berjalan di **VPS Ubuntu** menggunakan
    DB_PATH=/var/data/simplisleep.db
    AUTO_SEED=true
    TRUST_PROXY=true
-   WEB_ORIGIN=https://simplisleep.netlify.app
+   WEB_ORIGIN=https://simplisleeps.netlify.app
    ENABLE_DEMO_LOGIN=true
    # Sertakan JWT_SECRET, WALLET_ENC_KEY, ADMIN_TOKEN, Google Auth, dan konfigurasi Sepolia
    ```
