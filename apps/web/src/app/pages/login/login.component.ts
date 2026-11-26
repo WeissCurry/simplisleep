@@ -42,18 +42,18 @@ import { CardsService, RarityBoardCard } from '../cards/cards.service';
             >
               <span class="w-2 h-2 sm:w-2.5 sm:h-2.5 bg-brand rounded-full inline-block border border-ink shrink-0 animate-pulse"></span>
               <span class="sm:hidden">Anti Begadang Club</span>
-              <span class="hidden sm:inline">SimpliDOTS Vibe Coding 2026 • Anti Begadang Club</span>
+              <span class="hidden sm:inline">SimpliDOTS • Anti Begadang Club</span>
             </div>
 
-            <!-- Massive Wordmark (clamp font-size, 2 baris di mobile agar muat 312px) -->
+            <!-- Massive Wordmark (clamp font-size, 2 baris di mobile agar muat 312px dan fold) -->
             <h1
-              class="font-pixel font-black text-ink tracking-tight uppercase leading-none drop-shadow-sm flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2"
+              class="font-pixel font-black text-ink tracking-tight uppercase leading-none drop-shadow-sm flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2 max-w-full"
             >
-              <span style="font-size: clamp(2.2rem, 12vw, 5.5rem);">SIMPLI</span>
-              <span class="text-brand flex items-center justify-center" style="font-size: clamp(2.2rem, 12vw, 5.5rem);">
-                SLEEP
+              <span style="font-size: clamp(1.85rem, 10vw, 5.25rem);">SIMPLI</span>
+              <span class="text-brand flex items-center justify-center max-w-full" style="font-size: clamp(1.85rem, 10vw, 5.25rem);">
+                SLEEPS
                 <span
-                  class="inline-block w-4 h-4 sm:w-6 sm:h-6 md:w-8 md:h-8 bg-brand rounded-full border-2 sm:border-3 border-ink ml-1.5 align-middle"
+                  class="inline-block w-3.5 h-3.5 sm:w-6 sm:h-6 md:w-8 md:h-8 bg-brand rounded-full border-2 sm:border-3 border-ink ml-1 sm:ml-1.5 align-middle shrink-0"
                   aria-hidden="true"
                 ></span>
               </span>
