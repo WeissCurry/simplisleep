@@ -351,7 +351,7 @@ import { CardsService, RarityBoardCard } from '../cards/cards.service';
 
       <!-- 6. WIZARDSHOCK FOOTER (Satu Baris Sederhana) -->
       <footer class="container-app pt-8 pb-12 border-t-2 border-ink text-center text-xs text-ink-muted font-pixel">
-        <p>© 2026 SimpliSleep • Gerakan Tidur Sehat SimpliDOTS • Anti Begadang Club</p>
+        <p>© 2026 SimpliSleeps • Gerakan Tidur Sehat SimpliDOTS • Anti Begadang Club</p>
       </footer>
     </div>
   `,

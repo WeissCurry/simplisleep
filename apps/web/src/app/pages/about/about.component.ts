@@ -22,7 +22,7 @@ export interface FlowStepDetail {
       <header class="panel-pixel rounded-[12px] p-3 sm:p-6 bg-surface flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4">
         <div class="min-w-0">
           <h1 class="font-pixel text-lg sm:text-2xl font-black text-ink uppercase tracking-tight truncate">
-            Tentang SimpliSleep
+            Tentang SimpliSleeps
           </h1>
           <p class="font-sans text-xs sm:text-sm text-ink-muted mt-1 leading-relaxed">
             Gamifikasi tidur sehat dengan komitmen on-chain dan kartu Soulbound NFT.
@@ -397,7 +397,7 @@ export interface FlowStepDetail {
 
           <!-- DIAGRAM DESKTOP & TABLET / FOLD TERBUKA (viewBox 940x470, hidden di mobile < 768px) -->
           <div class="hidden md:block w-full">
-            <svg class="w-full h-auto max-w-full block" viewBox="0 0 940 470" xmlns="http://www.w3.org/2000/svg" aria-label="Diagram Arsitektur Sistem SimpliSleep (Desktop)">
+            <svg class="w-full h-auto max-w-full block" viewBox="0 0 940 470" xmlns="http://www.w3.org/2000/svg" aria-label="Diagram Arsitektur Sistem SimpliSleeps (Desktop)">
               <defs>
                 <filter id="d-shadow" x="-4%" y="-4%" width="112%" height="112%">
                   <feDropShadow dx="3" dy="3" stdDeviation="0" flood-color="#141414" />
@@ -717,7 +717,7 @@ export interface FlowStepDetail {
       <!-- Footer Note Ringkas -->
       <footer class="panel-pixel rounded-[12px] p-3 sm:p-4 bg-surface text-center space-y-1">
         <p class="font-pixel text-xs sm:text-sm font-bold text-ink uppercase">
-          SimpliSleep • Anti Begadang Club
+          SimpliSleeps • Anti Begadang Club
         </p>
         <p class="text-[11px] text-ink-muted font-mono">
           "Karena tidur cukup adalah performa kerja terbaikmu."

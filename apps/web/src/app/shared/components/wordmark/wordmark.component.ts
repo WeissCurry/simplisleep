@@ -9,7 +9,7 @@ import { RouterLink } from '@angular/router';
     <a
       routerLink="/"
       class="group inline-flex items-center gap-1.5 sm:gap-2 select-none focus:outline-none focus:ring-2 focus:ring-brand rounded-[8px] p-0.5 sm:p-1 transition-transform whitespace-nowrap"
-      aria-label="SimpliSleep Beranda"
+      aria-label="SimpliSleeps Beranda"
     >
       <!-- Logo SimpliDOTS Resmi (Ikon Kotak Merah Sudut Bulat, Vektor Halus) -->
       <picture class="shrink-0 flex items-center">
@@ -45,7 +45,7 @@ import { RouterLink } from '@angular/router';
               'ml-0.5 sm:ml-1',
               textSizeClass
             ]"
-          >Sleep</span>
+          >Sleeps</span>
           <!-- Titik Merah Ikonik SimpliDOTS -->
           <span
             class="inline-block w-2 sm:w-2.5 h-2 sm:h-2.5 bg-brand rounded-full ml-1 border border-ink align-middle shrink-0"

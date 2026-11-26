@@ -294,7 +294,7 @@ export class AwakeService {
     // 2. Tampilkan Browser Notification API bila sudah diizinkan oleh user
     if (this.hasNotificationSupport && Notification.permission === 'granted') {
       try {
-        new Notification('SimpliSleep - Waktunya Tidur', {
+        new Notification('SimpliSleeps - Waktunya Tidur', {
           body: text
         });
       } catch {}

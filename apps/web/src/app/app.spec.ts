@@ -28,17 +28,17 @@ describe('App', () => {
     expect(app).toBeTruthy();
   });
 
-  it('should have title SimpliSleep', () => {
+  it('should have title SimpliSleeps', () => {
     const fixture = TestBed.createComponent(App);
     const app = fixture.componentInstance;
-    expect(app.title).toBe('SimpliSleep');
+    expect(app.title).toBe('SimpliSleeps');
   });
 
   it('should render header branding', async () => {
     const fixture = TestBed.createComponent(App);
     await fixture.whenStable();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('header')?.textContent).toContain('SimpliSleep');
+    expect(compiled.querySelector('header')?.textContent).toContain('SimpliSleeps');
   });
 });
 

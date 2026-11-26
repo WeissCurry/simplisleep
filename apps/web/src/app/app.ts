@@ -40,7 +40,7 @@ import { WordmarkComponent } from './shared/components/wordmark/wordmark.compone
   styleUrl: './app.scss'
 })
 export class App implements OnInit {
-  title = 'SimpliSleep';
+  title = 'SimpliSleeps';
   private auth = inject(AuthService);
   private router = inject(Router);
   readonly sleepService = inject(SleepService);

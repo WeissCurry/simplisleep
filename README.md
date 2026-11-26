@@ -1,6 +1,8 @@
-# SimpliSleep
+# SimpliSleeps
 
-SimpliSleep adalah platform gamifikasi kebiasaan tidur sehat untuk karyawan SimpliDOTS (SimpliMates). Aplikasi ini memadukan algoritma skor tidur berbasis durasi dan konsistensi, kartu koleksi digital Soulbound NFT (ERC-5192) di jaringan Ethereum Sepolia, dan bukti integritas klasemen mingguan on-chain tanpa mengekspos data privat jam tidur.
+> **Catatan Merek**: Nama tampilan resmi aplikasi adalah **SimpliSleeps**. Nama repositori, direktori proyek, dan subdomain web/API tetap menggunakan `simplisleep` (mis. `simplisleep.netlify.app`).
+
+SimpliSleeps adalah platform gamifikasi kebiasaan tidur sehat untuk karyawan SimpliDOTS (SimpliMates). Aplikasi ini memadukan algoritma skor tidur berbasis durasi dan konsistensi, kartu koleksi digital Soulbound NFT (ERC-5192) di jaringan Ethereum Sepolia, dan bukti integritas klasemen mingguan on-chain tanpa mengekspos data privat jam tidur.
 
 ## Asal Ide
 
@@ -8,7 +10,7 @@ Aplikasi ini lahir dari satu frasa yang terucap oleh salah satu SimpliMates saat
 
 > "ini aku belum tidur ini... sebentar lagi goyang"
 
-Kalimat tersebut menggambarkan kebiasaan begadang yang kerap dianggap biasa. SimpliSleep dibuat agar tidur cukup menjadi kebiasaan seru yang bisa dilakukan bareng tim melalui skor harian, streak, fitur saling mengingatkan, dan kartu koleksi.
+Kalimat tersebut menggambarkan kebiasaan begadang yang kerap dianggap biasa. SimpliSleeps dibuat agar tidur cukup menjadi kebiasaan seru yang bisa dilakukan bareng tim melalui skor harian, streak, fitur saling mengingatkan, dan kartu koleksi.
 
 ---
 
@@ -32,7 +34,7 @@ Kalimat tersebut menggambarkan kebiasaan begadang yang kerap dianggap biasa. Sim
 
 ## Arsitektur Singkat (On-Chain vs Off-Chain)
 
-SimpliSleep menerapkan arsitektur hybrid yang mengutamakan privasi data tidur (Privacy-by-Design):
+SimpliSleeps menerapkan arsitektur hybrid yang mengutamakan privasi data tidur (Privacy-by-Design):
 
 - **Off-Chain (Database SQLite & Backend API)**:
   - Seluruh data sensitif disimpan secara off-chain di database internal: jam tidur (`started_at`), jam bangun (`ended_at`), status heartbeat, catatan pengingat tidur, dan profil pengguna.
@@ -218,7 +220,7 @@ pnpm --filter web build
   ```
 
 ### 4. Panduan Deployment API ke Railway
-SimpliSleep menyertakan konfigurasi `Dockerfile` dan `railway.json` di root repositori untuk deployment container API yang andal di monorepo pnpm:
+SimpliSleeps menyertakan konfigurasi `Dockerfile` dan `railway.json` di root repositori untuk deployment container API yang andal di monorepo pnpm:
 
 1. **New Project dari GitHub**:
    - Buka dashboard [Railway](https://railway.app).
@@ -259,7 +261,7 @@ SimpliSleep menyertakan konfigurasi `Dockerfile` dan `railway.json` di root repo
      ```
 
 ### 5. Panduan Deployment API ke VPS (Production yang Digunakan)
-Arsitektur API live SimpliSleep saat ini berjalan di **VPS Ubuntu** menggunakan proses manager **PM2**, reverse proxy **Nginx**, dan sertifikat SSL **Certbot** via branch mandiri **`deploy-api`**:
+Arsitektur API live SimpliSleeps saat ini berjalan di **VPS Ubuntu** menggunakan proses manager **PM2**, reverse proxy **Nginx**, dan sertifikat SSL **Certbot** via branch mandiri **`deploy-api`**:
 
 1. **Build Bundle Mandiri Secara Lokal & Push ke Branch `deploy-api`**:
    Untuk efisiensi memori (VPS RAM 1GB), API dibuild menjadi satu file executable ESM (`index.mjs`, ~2.4 MB) sehingga VPS tidak membutuhkan instalasi dependensi `node_modules` atau `pnpm`:
@@ -341,7 +343,7 @@ Arsitektur API live SimpliSleep saat ini berjalan di **VPS Ubuntu** menggunakan 
 
 ## Smart Contract Sepolia
 
-Kontrak pintar SimpliSleep ditulis dalam Solidity 0.8.28 dan diuji menggunakan Hardhat dan viem:
+Kontrak pintar SimpliSleeps ditulis dalam Solidity 0.8.28 dan diuji menggunakan Hardhat dan viem:
 
 - **`SleepCards.sol`**: Implementasi ERC-721 Soulbound (ERC-5192) yang mengunci token secara permanen ke wallet penerima (non-transferable).
 - **`LeaderboardCommit.sol`**: Kontrak pencatat komitmen hash klasemen mingguan (`commitLeaderboard(string weekId, bytes32 hash)`) dengan proteksi anti-overwrite (satu komitmen per minggu).
@@ -352,10 +354,10 @@ Untuk langkah deployment lengkap ke jaringan Sepolia, penyediaan gas ETH faucet,
 
 ## Transparansi & Bukti On-Chain
 
-SimpliSleep menerapkan sistem pembuktian integritas klasemen tidur berbasis smart contract di Ethereum Sepolia. Bagian ini menjelaskan arsitektur kriptografis, prosedur verifikasi independen, serta jaminan privasi data pengguna.
+SimpliSleeps menerapkan sistem pembuktian integritas klasemen tidur berbasis smart contract di Ethereum Sepolia. Bagian ini menjelaskan arsitektur kriptografis, prosedur verifikasi independen, serta jaminan privasi data pengguna.
 
 ### 1. Alasan Desain & UX Awam
-Tantangan dan papan peringkat kantor sering kali rentan terhadap kecurigaan manipulasi data internal (misalnya pengubahan skor atau peringkat secara diam-diam). Untuk menjamin transparansi tanpa membebani pengguna dengan antarmuka Web3 yang rumit, SimpliSleep mengambil pendekatan berikut:
+Tantangan dan papan peringkat kantor sering kali rentan terhadap kecurigaan manipulasi data internal (misalnya pengubahan skor atau peringkat secara diam-diam). Untuk menjamin transparansi tanpa membebani pengguna dengan antarmuka Web3 yang rumit, SimpliSleeps mengambil pendekatan berikut:
 - **UX Terintegrasi**: Halaman teknis terpisah dihapus agar pengguna tidak terdistraksi terminologi rumit. Status komitmen blockchain ditampilkan langsung sebagai badge informatif di dekat periode minggu Leaderboard (`Terverifikasi on-chain` atau `Menunggu commit`).
 - **Verifikasi Satu Klik**: Pengguna dapat menekan badge untuk membuka modal penjelasan dan menjalankan verifikasi matematis langsung di peramban (client-side) tanpa perlu memasang wallet ekstensi.
 - **Audit Tanpa Kepercayaan Pihak Ketiga (Trustless)**: Setiap orang dapat membuktikan bahwa peringkat mingguan yang diumumkan sama persis dengan yang dikunci di blockchain saat periode berakhir.
@@ -385,9 +387,9 @@ Kontrak dideploy pada jaringan uji **Ethereum Sepolia**:
 - **Keamanan**: Hash yang sudah tersimpan di blok transaksi Sepolia bersifat permanen dan tidak dapat diedit atau dihapus oleh siapa pun.
 
 ### 4. Cara Verifikasi Manual Independen
-Siapa saja dapat memverifikasi keabsahan data secara mandiri tanpa mempercayai server SimpliSleep:
+Siapa saja dapat memverifikasi keabsahan data secara mandiri tanpa mempercayai server SimpliSleeps:
 
-#### Melalui Antarmuka SimpliSleep
+#### Melalui Antarmuka SimpliSleeps
 1. Buka menu **Leaderboard**.
 2. Pilih minggu yang sudah ditutup (misal `2026-W46`).
 3. Klik badge **"Terverifikasi on-chain"**.
@@ -414,7 +416,7 @@ console.log("Computed Keccak-256:", keccak256(toBytes(canonicalJson)));
 Bandingkan hash keluaran terminal dengan rekaman hash pada smart contract Sepolia.
 
 ### 5. Privasi Terjaga: Data Mentah Tidak Pernah On-Chain
-- **Off-Chain Penuh untuk Data Sensitif**: Jam mulai tidur (`started_at`), jam bangun tidur (`ended_at`), status sesi tidur terputus, serta riwayat per malam hanya disimpan di database internal SimpliSleep.
+- **Off-Chain Penuh untuk Data Sensitif**: Jam mulai tidur (`started_at`), jam bangun tidur (`ended_at`), status sesi tidur terputus, serta riwayat per malam hanya disimpan di database internal SimpliSleeps.
 - **On-Chain Hanya Sidik Jari Skor**: Yang dikirim ke blockchain publik hanyalah hash 32-byte dari klasemen agregat. Tidak ada data jam tidur individual atau informasi pribadi yang dapat didekripsi dari hash tersebut.
 - **Bukan Sistem Evaluasi HR**: Aplikasi ini tidak terhubung ke evaluasi kinerja, kalender kerja, Slack, atau email perusahaan, sehingga batas privasi Simplimates tetap terlindungi.
 

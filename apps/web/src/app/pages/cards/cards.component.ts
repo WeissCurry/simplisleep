@@ -350,7 +350,7 @@ import { ALL_28_CARDS, CARD_TRIVIA_MAP, CardCollectionState, CardsService, Rarit
           <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b-2 border-ink pb-2.5">
             <div class="flex items-center gap-2">
               <h2 class="font-pixel text-base sm:text-xl font-black text-ink uppercase tracking-wide">
-                Papan Kelangkaan Kartu SimpliSleep
+                Papan Kelangkaan Kartu SimpliSleeps
               </h2>
             </div>
             <span class="font-pixel text-xs bg-brand-50 border border-brand-200 text-brand-ink px-2.5 py-1 font-bold uppercase rounded-[6px] self-start sm:self-auto whitespace-nowrap">

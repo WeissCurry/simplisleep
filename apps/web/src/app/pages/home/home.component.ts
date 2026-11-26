@@ -368,7 +368,7 @@ import { RarityBadgeComponent } from '../../shared/components/rarity-badge/rarit
 
             <div class="py-3 text-xs text-ink space-y-2 font-sans">
               <p class="font-bold text-ink">
-                Aturan Emas SimpliSleep:
+                Aturan Emas SimpliSleeps:
               </p>
               <ul class="space-y-1.5 pl-4 list-disc text-ink-muted text-xs leading-relaxed">
                 <li>Tidur 7–9 jam untuk raih skor durasi maksimal 100.</li>

@@ -21,7 +21,7 @@ const htmlContent = `<!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>SimpliSleep OG Image Preview</title>
+  <title>SimpliSleeps OG Image Preview</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Silkscreen:wght@700&display=swap" rel="stylesheet">
@@ -371,7 +371,7 @@ const htmlContent = `<!DOCTYPE html>
         <img class="brand-icon" src="${iconBase64}" alt="SimpliDOTS">
         <div class="brand-text">
           <div class="brand-title">
-            <span class="brand-simpli">Simpli</span><span class="brand-sleep">Sleep</span><span class="brand-dot"></span>
+            <span class="brand-simpli">Simpli</span><span class="brand-sleep">Sleeps</span><span class="brand-dot"></span>
           </div>
           <span class="brand-sub">Anti Begadang Club • SimpliDOTS</span>
         </div>
@@ -444,7 +444,7 @@ const htmlContent = `<!DOCTYPE html>
     <!-- Bottom Bar -->
     <div class="bottom-bar">
       <div>
-        <span class="footer-highlight">SimpliSleep</span> — Bangun Pagi Lebih Segar & Produktif
+        <span class="footer-highlight">SimpliSleeps</span> — Bangun Pagi Lebih Segar & Produktif
       </div>
       <div class="footer-pill">
         Pelacak Kebiasaan Tidur Sehat
